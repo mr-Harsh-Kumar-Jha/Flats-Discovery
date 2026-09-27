@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "Aqua",
+        "color": "#00BFFF",
+        "description": "Aqua Line (Vanaz to Ramwadi)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [73.8118, 18.5085],
+          [73.8340, 18.5140],
+          [73.8567, 18.5204],
+          [73.8833, 18.5350],
+          [73.9213, 18.5580]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "Purple",
+        "color": "#8A2BE2",
+        "description": "Purple Line (PCMC to Swargate)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [73.8150, 18.6250],
+          [73.8250, 18.5900],
+          [73.8450, 18.5300],
+          [73.8567, 18.5204],
+          [73.8580, 18.5018]
+        ]
+      }
+    }
+  ]
+}

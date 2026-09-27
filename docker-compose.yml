@@ -1,0 +1,106 @@
+# ===========================================================================
+# Pune-Flats: Docker Compose — Development Stack
+# ===========================================================================
+# Usage:
+#   cp .env.example .env        # Fill in secrets
+#   docker-compose up --build   # Start all services
+#   docker-compose down -v      # Teardown (including volumes)
+# ===========================================================================
+
+services:
+  # -------------------------------------------------------------------------
+  # PostgreSQL 16 + PostGIS 3.4
+  # -------------------------------------------------------------------------
+  postgres:
+    image: postgis/postgis:16-3.4-alpine
+    platform: linux/amd64  # PostGIS Alpine doesn't have arm64 builds; emulated via Rosetta on Apple Silicon
+    container_name: puneflats-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-puneflats}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-puneflats_dev_password}
+      POSTGRES_DB: ${DB_NAME:-puneflats}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-puneflats} -d ${DB_NAME:-puneflats}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - puneflats-network
+
+  # -------------------------------------------------------------------------
+  # Go API Server (Chi + WebSocket)
+  # -------------------------------------------------------------------------
+  # Development mode: uses Air for hot reload.
+  # Source code is volume-mounted for live editing.
+  go-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+    container_name: puneflats-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DB_HOST: postgres
+      API_ENV: development
+    ports:
+      - "${API_PORT:-8080}:8080"
+    volumes:
+      # Mount source for hot reload (Air watches for changes)
+      - ./backend:/app
+      # Persist Go module cache (avoid re-downloading on rebuild)
+      - go_modules:/go/pkg/mod
+      # Persist build cache
+      - go_build_cache:/root/.cache/go-build
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - puneflats-network
+
+  # -------------------------------------------------------------------------
+  # React Frontend (Vite Dev Server)
+  # -------------------------------------------------------------------------
+  # Development mode: Vite HMR with source volume mount.
+  # In production, build static assets and serve from CDN or Go server.
+  react-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    container_name: puneflats-frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_BASE_URL: http://localhost:${API_PORT:-8080}
+      VITE_WS_URL: ws://localhost:${API_PORT:-8080}/ws
+      VITE_MAPTILER_KEY: ${VITE_MAPTILER_KEY:-}
+    ports:
+      - "5173:5173"
+    volumes:
+      # Mount source for HMR
+      - ./frontend:/app
+      # Anonymous volume to preserve node_modules from container
+      # (prevents host's node_modules from overriding container's)
+      - /app/node_modules
+    depends_on:
+      - go-api
+    networks:
+      - puneflats-network
+
+volumes:
+  postgres_data:
+    driver: local
+  go_modules:
+    driver: local
+  go_build_cache:
+    driver: local
+
+networks:
+  puneflats-network:
+    driver: bridge

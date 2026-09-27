@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   Pune-Flats — Global Styles (Light + Dark Mode)
+   ========================================================================= */
+
+/* ── Theme Variables ── */
+:root {
+  /* Surface */
+  --surface-base: #ffffff;
+  --surface-raised: #f8fafc;
+  --surface-overlay: #f1f5f9;
+  --surface-input: #f1f5f9;
+  --surface-modal: #ffffff;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-faint: #cbd5e1;
+
+  /* Borders */
+  --border-default: #e2e8f0;
+  --border-subtle: #f1f5f9;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(0, 0, 0, 0.12);
+  --scrollbar-hover: rgba(0, 0, 0, 0.2);
+
+  /* Backdrop strength */
+  --backdrop-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-base: #020617;
+    --surface-raised: #0f0f1e;
+    --surface-overlay: #161625;
+    --surface-input: #0d0d1a;
+    --surface-modal: #161625;
+
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.5);
+    --text-muted: rgba(255, 255, 255, 0.3);
+    --text-faint: rgba(255, 255, 255, 0.15);
+
+    --border-default: rgba(255, 255, 255, 0.1);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+
+    --glass-bg: rgba(8, 8, 18, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --glass-shadow-sm: 0 4px 16px 0 rgba(31, 38, 135, 0.1);
+
+    --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+    --scrollbar-hover: rgba(255, 255, 255, 0.2);
+
+    --backdrop-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* MapLibre container must fill the viewport */
+.maplibregl-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Override MapLibre popup styles — theme-aware */
+.maplibregl-popup-content {
+  background: var(--surface-modal) !important;
+  border: 1px solid var(--border-default) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--glass-shadow) !important;
+  padding: 0 !important;
+  color: var(--text-primary);
+}
+
+.maplibregl-popup-close-button {
+  color: var(--text-muted);
+  font-size: 18px;
+  padding: 4px 8px;
+  right: 4px;
+  top: 4px;
+}
+.maplibregl-popup-close-button:hover {
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  border-radius: 6px;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: var(--surface-modal) !important;
+}
+
+/* Full-height layout */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--surface-base);
+  color: var(--text-primary);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover); }
+
+/* Hide scrollbar for chicklet bar */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+
+/* ── Glassmorphism utility ── */
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  .glass-light {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow-sm);
+  }
+}
+
+/* ── Chicklet Bar (quick action buttons below search) ── */
+.chicklet {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 18px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.chicklet:hover {
+  background: var(--surface-overlay);
+  border-color: var(--border-default);
+}
+.chicklet:active {
+  transform: scale(0.96);
+}
+
+/* ── Pin Mode Banner ── */
+.pin-mode-banner {
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.95), rgba(79, 70, 229, 0.95));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  animation: pmb-pulse 2.4s ease-in-out infinite, pmb-slide-in 0.28s ease-out;
+}
+
+@keyframes pmb-slide-in {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes pmb-pulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1); }
+  50%      { box-shadow: 0 8px 40px rgba(167, 139, 250, 0.65), 0 0 0 2px rgba(167, 139, 250, 0.35); }
+}
+
+/* ── Slide-up animation for bottom-sheet modals ── */
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Form input (used in CreatePinModal) ── */
+.form-input {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 10px;
+  background: var(--surface-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.form-input:focus {
+  border-color: rgba(139, 92, 246, 0.6);
+}
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+/* Prevent iOS Safari auto-zoom on input focus */
+@media (max-width: 768px) {
+  .form-input { font-size: 16px !important; }
+}
+
+/* ── Legend pill (bottom bar) ── */
+.legend-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  color: var(--text-muted);
+  font-size: 11px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  box-shadow: var(--glass-shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+/* ── Theme-aware utility classes ── */
+.theme-surface { background: var(--surface-base); }
+.theme-raised { background: var(--surface-raised); }
+.theme-overlay { background: var(--surface-overlay); }
+.theme-modal { background: var(--surface-modal); }
+.theme-text { color: var(--text-primary); }
+.theme-text-secondary { color: var(--text-secondary); }
+.theme-text-muted { color: var(--text-muted); }
+.theme-border { border-color: var(--border-default); }
+.theme-backdrop { background-color: var(--backdrop-color); }

@@ -1,0 +1,313 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pune Junction",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8744146,
+          18.5288773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kasarwadi",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8208678,
+          18.6080927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shivajinagar",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8513115,
+          18.5325915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ghorpuri",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8939317,
+          18.528148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phursungi",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.0021566,
+          18.4572003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sasvad Road",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9545184,
+          18.472818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dapodi",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8326856,
+          18.5814473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pimpri",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8025117,
+          18.6229526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chinchwad",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7917128,
+          18.6403548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Akurdi",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.764716,
+          18.6486364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hadapsar Railway Station",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9278252,
+          18.526967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Loni",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.0208082,
+          18.4908467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Manjari Budruk",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9719339,
+          18.5122093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dehu Road",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7343306,
+          18.680047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Begdewadi",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7080003,
+          18.7009452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Talegaon",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6720899,
+          18.7351057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ghorawadi",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6962042,
+          18.7213273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kalyani Nagar Station",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9058662,
+          18.5492369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ramwadi Station",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9151573,
+          18.5600183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Railway Station",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9435018,
+          18.4806742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Talegaon Railway Station",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6705457,
+          18.7367437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Akurdi Railway Station",
+        "type": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7648994,
+          18.6482198
+        ]
+      }
+    }
+  ]
+}

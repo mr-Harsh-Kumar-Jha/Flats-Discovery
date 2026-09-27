@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pune International Airport",
+        "type": "airport"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9197,
+          18.5822
+        ]
+      }
+    }
+  ]
+}

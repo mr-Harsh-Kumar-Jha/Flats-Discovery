@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pu La Deshpande Udyan",
+        "type": "park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.8340, 18.4910],
+          [73.8370, 18.4910],
+          [73.8370, 18.4930],
+          [73.8340, 18.4930],
+          [73.8340, 18.4910]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kamala Nehru Park",
+        "type": "park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.8310, 18.5210],
+          [73.8350, 18.5210],
+          [73.8350, 18.5240],
+          [73.8310, 18.5240],
+          [73.8310, 18.5210]
+        ]]
+      }
+    }
+  ]
+}
