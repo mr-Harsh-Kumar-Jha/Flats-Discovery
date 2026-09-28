@@ -63,6 +63,7 @@ export const useMapStore = create((set, get) => ({
     flats: true,
     seekers: false,
     heatmap: false,
+    transit: true,
   },
 
   // Map instance reference for direct manipulation (flyTo)

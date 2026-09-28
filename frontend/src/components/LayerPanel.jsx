@@ -27,6 +27,13 @@ const LAYER_CONFIG = [
     activeClass: 'bg-amber-500/20 border-amber-500/50 text-amber-600 dark:text-amber-300',
     dotClass: 'bg-amber-400',
   },
+  {
+    key: 'transit',
+    label: 'Metro & Railway',
+    icon: '🚇',
+    activeClass: 'bg-purple-500/20 border-purple-500/50 text-purple-600 dark:text-purple-300',
+    dotClass: 'bg-purple-400',
+  },
 ];
 
 export default function LayerPanel() {

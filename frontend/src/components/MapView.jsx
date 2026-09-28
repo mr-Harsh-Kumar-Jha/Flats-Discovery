@@ -253,6 +253,171 @@ export default function MapView() {
           }
         });
       }
+
+      // --- Transit source (metro + railway stations from static GeoJSON) ---
+      if (!map.getSource('transit-source')) {
+        map.addSource('transit-source', {
+          type: 'geojson',
+          data: '/transit_stops.geojson'
+        });
+
+        // Purple Line route geometry (PCMC → Swargate — connecting stations in order)
+        const purpleLineCoords = [
+          [73.8076, 18.6298], // PCMC
+          [73.8075, 18.6218], // Sant Tukaram Nagar
+          [73.8087, 18.6134], // Bhosari
+          [73.8102, 18.6048], // Kasarwadi
+          [73.8127, 18.5942], // Phugewadi
+          [73.8168, 18.5825], // Dapodi
+          [73.8282, 18.5665], // Bopodi
+          [73.8361, 18.5568], // Khadki
+          [73.8454, 18.5438], // Range Hills
+          [73.8507, 18.5337], // Shivajinagar
+          [73.8573, 18.5264], // Civil Court
+          [73.8602, 18.5190], // Budhwar Peth
+          [73.8586, 18.5120], // Mandai
+          [73.8574, 18.5005], // Swargate
+        ];
+
+        // Aqua Line route geometry (Vanaz → Ramwadi — connecting stations in order)
+        const aquaLineCoords = [
+          [73.8063, 18.5091], // Vanaz
+          [73.8132, 18.5092], // Anand Nagar
+          [73.8220, 18.5085], // Ideal Colony
+          [73.8288, 18.5073], // Nal Stop
+          [73.8375, 18.5108], // Garware College
+          [73.8442, 18.5164], // Deccan Gymkhana
+          [73.8468, 18.5201], // Chhatrapati Sambhaji Udyan
+          [73.8529, 18.5227], // PMC
+          [73.8573, 18.5264], // District Court (interchange)
+          [73.8653, 18.5275], // Mangalwar Peth
+          [73.8744, 18.5289], // Pune Railway Station
+          [73.8811, 18.5338], // Ruby Hall
+          [73.8858, 18.5396], // Bund Garden
+          [73.8887, 18.5453], // Yerawada
+          [73.9055, 18.5445], // Kalyani Nagar
+          [73.9126, 18.5570], // Ramwadi
+        ];
+
+        map.addSource('purple-line-source', {
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            geometry: { type: 'LineString', coordinates: purpleLineCoords }
+          }
+        });
+        map.addSource('aqua-line-source', {
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            geometry: { type: 'LineString', coordinates: aquaLineCoords }
+          }
+        });
+
+        // Purple Line stroke
+        map.addLayer({
+          id: 'purple-line',
+          type: 'line',
+          source: 'purple-line-source',
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: {
+            'line-color': '#9333ea',
+            'line-width': 3.5,
+            'line-opacity': 0.7,
+            'line-dasharray': [2, 1]
+          }
+        });
+
+        // Aqua Line stroke
+        map.addLayer({
+          id: 'aqua-line',
+          type: 'line',
+          source: 'aqua-line-source',
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: {
+            'line-color': '#06b6d4',
+            'line-width': 3.5,
+            'line-opacity': 0.7,
+            'line-dasharray': [2, 1]
+          }
+        });
+
+        // Station dots — color by route
+        map.addLayer({
+          id: 'transit-stations',
+          type: 'circle',
+          source: 'transit-source',
+          filter: ['==', ['get', 'stop_type'], 'metro_station'],
+          paint: {
+            'circle-color': [
+              'match', ['get', 'route_info'],
+              'Purple Line', '#9333ea',
+              'Aqua Line', '#06b6d4',
+              '#94a3b8' // fallback grey
+            ],
+            'circle-radius': [
+              'interpolate', ['linear'], ['zoom'],
+              10, 3,
+              13, 5,
+              16, 8
+            ],
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#ffffff',
+            'circle-opacity': 0.9
+          }
+        });
+
+        // Railway station dots (larger, distinct color)
+        map.addLayer({
+          id: 'transit-railway',
+          type: 'circle',
+          source: 'transit-source',
+          filter: ['==', ['get', 'stop_type'], 'railway_station'],
+          paint: {
+            'circle-color': '#dc2626',
+            'circle-radius': [
+              'interpolate', ['linear'], ['zoom'],
+              10, 4,
+              13, 7,
+              16, 10
+            ],
+            'circle-stroke-width': 2.5,
+            'circle-stroke-color': '#ffffff',
+            'circle-opacity': 0.9
+          }
+        });
+
+        // Station name labels
+        map.addLayer({
+          id: 'transit-labels',
+          type: 'symbol',
+          source: 'transit-source',
+          layout: {
+            'text-field': ['get', 'name'],
+            'text-size': [
+              'interpolate', ['linear'], ['zoom'],
+              11, 9,
+              14, 11,
+              16, 13
+            ],
+            'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+            'text-offset': [0, 1.4],
+            'text-anchor': 'top',
+            'text-allow-overlap': false,
+            'text-optional': true,
+          },
+          paint: {
+            'text-color': [
+              'match', ['get', 'route_info'],
+              'Purple Line', '#7c3aed',
+              'Aqua Line', '#0891b2',
+              '#dc2626' // railway
+            ],
+            'text-halo-color': '#ffffff',
+            'text-halo-width': 1.5
+          }
+        });
+      }
     };
 
     // ── Event handlers (only attached once) ──
