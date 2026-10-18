@@ -102,14 +102,15 @@ export default function PinDetailModal({ pin, type, onClose }) {
                 <Share2 className="w-3.5 h-3.5" />
               </button>
               <button
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/6 border-none text-slate-400 dark:text-white/50 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200/60 dark:border-white/10 text-slate-500 dark:text-white/70 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 flex items-center justify-center transition-all"
                 title="Report"
               >
                 <Flag className="w-3.5 h-3.5" />
               </button>
               <button
                 onClick={onClose}
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/6 border-none text-slate-400 dark:text-white/50 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/12 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200/60 dark:border-white/10 text-slate-500 dark:text-white/70 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/20 flex items-center justify-center transition-all"
+                aria-label="Close"
               >
                 <X className="w-4 h-4" />
               </button>

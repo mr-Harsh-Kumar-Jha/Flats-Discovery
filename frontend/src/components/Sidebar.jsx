@@ -63,7 +63,7 @@ export default function Sidebar() {
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
       >
-        <div className="h-full bg-white/95 dark:bg-[#0f0f1e]/95 backdrop-blur-xl border-r border-slate-200 dark:border-white/8 flex flex-col">
+        <div className="h-full bg-white/95 dark:bg-[#0f0f1e]/95 backdrop-blur-xl border-r border-slate-200 dark:border-white/10 flex flex-col">
           {/* Header */}
           <div className="px-4 pt-14 pb-3">
             <div className="flex justify-between items-center mb-1">
@@ -128,7 +128,7 @@ export default function Sidebar() {
                         className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all ${
                           isActive
                             ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-600 dark:text-emerald-400'
-                            : 'bg-slate-50 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                            : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
                         }`}
                       >
                         {bhk}
@@ -173,7 +173,7 @@ export default function Sidebar() {
                         className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all ${
                           isActive
                             ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-600 dark:text-emerald-400'
-                            : 'bg-slate-50 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                            : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
                         }`}
                       >
                         {label}
@@ -201,7 +201,7 @@ export default function Sidebar() {
                         className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all ${
                           isActive
                             ? 'bg-indigo-500/20 border border-indigo-500/50 text-indigo-600 dark:text-indigo-400'
-                            : 'bg-slate-50 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                            : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
                         }`}
                       >
                         {label}
@@ -229,7 +229,7 @@ export default function Sidebar() {
                         className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all ${
                           isActive
                             ? 'bg-violet-500/20 border border-violet-500/50 text-violet-600 dark:text-violet-400'
-                            : 'bg-slate-50 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                            : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
                         }`}
                       >
                         {label}
@@ -269,7 +269,7 @@ export default function Sidebar() {
                         className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all ${
                           isActive
                             ? 'bg-cyan-500/20 border border-cyan-500/50 text-cyan-600 dark:text-cyan-400'
-                            : 'bg-slate-50 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                            : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
                         }`}
                       >
                         {label}
@@ -297,7 +297,7 @@ export default function Sidebar() {
                         className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all ${
                           isActive
                             ? 'bg-amber-500/20 border border-amber-500/50 text-amber-600 dark:text-amber-400'
-                            : 'bg-slate-50 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                            : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
                         }`}
                       >
                         {label}
@@ -378,7 +378,7 @@ function FlatPinCard({ pin, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/4 transition-all group mb-0.5"
+      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all group mb-0.5"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 min-w-0">
@@ -409,7 +409,7 @@ function SeekerPinCard({ pin, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/4 transition-all group mb-0.5"
+      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all group mb-0.5"
     >
       <div className="flex items-center gap-2 min-w-0">
         <div className="w-2 h-2 rounded-full bg-indigo-400 shrink-0" />

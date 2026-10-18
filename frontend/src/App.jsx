@@ -53,7 +53,7 @@ function App() {
 
       {/* ── Chicklet Bar (below search) — primary action entry points ── */}
       {!pinMode && (
-        <div className="absolute top-[68px] left-1/2 -translate-x-1/2 z-10 flex gap-2 px-3 max-w-[540px] w-full overflow-x-auto scrollbar-none">
+        <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-30 flex gap-2 px-4 max-w-md w-full overflow-x-auto scrollbar-none">
           <button
             onClick={() => enterPinMode('rent')}
             className="chicklet"
@@ -80,7 +80,7 @@ function App() {
 
       {/* ── Pin Mode Banner — shown when user is placing a pin ── */}
       {pinMode && (
-        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-20 w-[calc(100%-24px)] max-w-[520px]">
+        <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-40 w-full max-w-md px-4">
           <div className="pin-mode-banner">
             <div className="flex-1">
               <span className="font-bold text-amber-200">

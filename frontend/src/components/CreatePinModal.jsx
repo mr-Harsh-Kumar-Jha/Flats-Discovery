@@ -90,7 +90,7 @@ export default function CreatePinModal({ onClose, initialTab = 'flat', coords })
       <div className="absolute inset-0 theme-backdrop backdrop-blur-sm" />
 
       <div
-        className="relative w-full max-w-[400px] max-h-[85vh] overflow-y-auto bg-white dark:bg-[#161625] rounded-t-2xl sm:rounded-2xl border border-slate-200 dark:border-white/8 shadow-2xl p-6 animate-slide-up"
+        className="relative w-full max-w-[400px] max-h-[85vh] overflow-y-auto bg-white dark:bg-[#161625] rounded-t-2xl sm:rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl p-6 animate-slide-up"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
@@ -98,7 +98,11 @@ export default function CreatePinModal({ onClose, initialTab = 'flat', coords })
           <h2 className="text-slate-800 dark:text-white text-[15px] font-semibold">
             {tab === 'flat' ? '🏠 List your flat' : '🔍 Post requirement'}
           </h2>
-          <button onClick={onClose} className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/6 text-slate-400 dark:text-white/50 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/12 flex items-center justify-center transition-colors">
+          <button
+            onClick={onClose}
+            className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200/60 dark:border-white/10 text-slate-500 dark:text-white/70 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/20 flex items-center justify-center transition-all"
+            aria-label="Close"
+          >
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -110,7 +114,7 @@ export default function CreatePinModal({ onClose, initialTab = 'flat', coords })
             className={`flex-1 py-2 rounded-xl text-[13px] font-medium transition-all ${
               tab === 'flat'
                 ? 'bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400'
-                : 'bg-slate-100 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
             }`}
           >
             <Home className="w-3.5 h-3.5 inline mr-1.5" />
@@ -121,7 +125,7 @@ export default function CreatePinModal({ onClose, initialTab = 'flat', coords })
             className={`flex-1 py-2 rounded-xl text-[13px] font-medium transition-all ${
               tab === 'seeker'
                 ? 'bg-indigo-500/15 border border-indigo-500/40 text-indigo-600 dark:text-indigo-400'
-                : 'bg-slate-100 dark:bg-white/4 border border-slate-200 dark:border-white/8 text-slate-500 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70'
+                : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10'
             }`}
           >
             <Search className="w-3.5 h-3.5 inline mr-1.5" />
