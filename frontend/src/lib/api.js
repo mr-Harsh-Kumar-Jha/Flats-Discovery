@@ -18,10 +18,11 @@ async function request(path, options = {}) {
   };
 
   // Dev auth: inject X-Dev-User-ID header
-  const devUserID = localStorage.getItem('dev_user_id');
-  if (devUserID) {
-    headers['X-Dev-User-ID'] = devUserID;
+  let devUserID = localStorage.getItem('dev_user_id');
+  if (!devUserID || devUserID.startsWith('a0000000-') || devUserID.startsWith('b0000000-')) {
+    devUserID = 'a0000001-0000-0000-0000-000000000001';
   }
+  headers['X-Dev-User-ID'] = devUserID;
 
   const res = await fetch(url, { ...options, headers });
   const json = await res.json();

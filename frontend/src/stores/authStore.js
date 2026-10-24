@@ -1,14 +1,37 @@
 import { create } from 'zustand';
 
+const DEFAULT_USER = {
+  id: 'a0000001-0000-0000-0000-000000000001',
+  name: 'Raj P.',
+};
+
+function getInitialUser() {
+  try {
+    const storedId = localStorage.getItem('dev_user_id');
+    const storedName = localStorage.getItem('dev_display_name');
+
+    // Upgrade stale placeholder IDs (a0000000-...) to valid seeded user
+    if (!storedId || storedId.startsWith('a0000000-') || storedId.startsWith('b0000000-')) {
+      localStorage.setItem('dev_user_id', DEFAULT_USER.id);
+      localStorage.setItem('dev_display_name', DEFAULT_USER.name);
+      return DEFAULT_USER;
+    }
+
+    return { id: storedId, name: storedName || DEFAULT_USER.name };
+  } catch (e) {
+    return DEFAULT_USER;
+  }
+}
+
+const initial = getInitialUser();
+
 /**
- * Auth store — minimal dev auth for MVP.
- * Production: JWT-based with refresh tokens.
+ * Auth store — dev auth with seamless fallback to seeded test users.
  */
 export const useAuthStore = create((set) => ({
-  // Current user (dev mode: stored in localStorage)
-  userId: localStorage.getItem('dev_user_id') || '',
-  displayName: localStorage.getItem('dev_display_name') || '',
-  isAuthenticated: !!localStorage.getItem('dev_user_id'),
+  userId: initial.id,
+  displayName: initial.name,
+  isAuthenticated: true,
 
   // Set user (dev mode)
   login: (userId, displayName) => {

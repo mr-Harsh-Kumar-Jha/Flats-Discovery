@@ -29,7 +29,7 @@ const LAYER_CONFIG = [
   },
   {
     key: 'transit',
-    label: 'Metro & Railway',
+    label: 'Transit Network (Metro, Rail, Air, Bus)',
     icon: '🚇',
     activeClass: 'bg-purple-500/20 border-purple-500/50 text-purple-600 dark:text-purple-300',
     dotClass: 'bg-purple-400',
