@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import { X, Share2, Flag, MapPin, Home, Calendar, MessageSquare, Send, Users, Briefcase, ChevronLeft, ChevronRight, Building, Droplets, Zap, Car } from 'lucide-react';
+import { X, Share2, Flag, MapPin, Home, Calendar, MessageSquare, Send, Users, Briefcase, ChevronLeft, ChevronRight, Building, Droplets, Zap, Car, ShieldCheck, Lock } from 'lucide-react';
 import { createDirectRoom, fetchMessages } from '../lib/api';
+import { useAuthStore } from '../stores/authStore';
+import { getRoomSharedKey, encryptMessage, decryptMessage } from '../lib/e2ee';
 
 function formatRent(rent) {
   if (!rent) return '0';
@@ -349,14 +351,17 @@ function PeopleSlide({ pin }) {
 }
 
 // ─── Chat Slide ───
+// ─── Chat Slide (End-to-End Encrypted) ───
 function ChatSlide({ pin, type }) {
   const [chatState, setChatState] = useState('idle'); // 'idle' | 'connecting' | 'active'
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [roomId, setRoomId] = useState(null);
+  const [sharedKeyInfo, setSharedKeyInfo] = useState(null);
   const wsRef = useRef(null);
   const messagesEndRef = useRef(null);
-  const devUserId = localStorage.getItem('dev_user_id');
+
+  const { userId, displayName } = useAuthStore();
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -369,38 +374,66 @@ function ChatSlide({ pin, type }) {
   }, []);
 
   const startChat = async () => {
-    if (!devUserId) {
+    if (!userId) {
       setChatState('idle');
       return;
     }
     setChatState('connecting');
     try {
-      // Create or get direct room for this pin's match
-      const room = await createDirectRoom(pin.id);
+      // Create or get direct room for this pin (connecting current user and pin owner)
+      const room = await createDirectRoom({ pinId: pin.id, targetUserId: pin.user_id });
       setRoomId(room.id);
 
-      // Load existing messages
+      // Derive E2EE shared secret key
+      const keyInfo = await getRoomSharedKey(room.id, userId);
+      setSharedKeyInfo(keyInfo);
+
+      // Load and decrypt existing messages
       const res = await fetchMessages(room.id);
-      setMessages(res.data?.reverse() || []);
+      const rawMessages = res.data?.reverse() || [];
+
+      const decrypted = await Promise.all(
+        rawMessages.map(async (msg) => {
+          const dec = await decryptMessage(msg.content, keyInfo?.key);
+          return {
+            ...msg,
+            decryptedContent: dec.text,
+            isE2EE: dec.isEncrypted || msg.is_encrypted,
+          };
+        })
+      );
+      setMessages(decrypted);
 
       // Connect WebSocket
       const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
       const host = window.location.host;
-      const wsUrl = `${protocol}//${host}/ws/chat?user_id=${devUserId}`;
+      const wsUrl = `${protocol}//${host}/ws/chat?user_id=${userId}`;
       const ws = new WebSocket(wsUrl);
 
       ws.onopen = () => {
         ws.send(JSON.stringify({ type: 'subscribe', room_id: room.id }));
         setChatState('active');
       };
-      ws.onmessage = (event) => {
+
+      ws.onmessage = async (event) => {
         try {
           const msg = JSON.parse(event.data);
           if (msg.type === 'message' && msg.room_id === room.id) {
-            setMessages(prev => [...prev, msg]);
+            const dec = await decryptMessage(msg.content, keyInfo?.key);
+            setMessages((prev) => [
+              ...prev,
+              {
+                ...msg,
+                decryptedContent: dec.text,
+                isE2EE: dec.isEncrypted || msg.is_encrypted,
+              },
+            ]);
           }
-        } catch {}
+        } catch (err) {
+          console.error('WS parse error:', err);
+        }
       };
+
       ws.onclose = () => setChatState('idle');
       wsRef.current = ws;
     } catch (err) {
@@ -409,37 +442,63 @@ function ChatSlide({ pin, type }) {
     }
   };
 
-  const sendMessage = (e) => {
+  const sendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim() || !roomId || !wsRef.current) return;
-    wsRef.current.send(JSON.stringify({
-      type: 'message',
-      room_id: roomId,
-      content: input.trim()
-    }));
+
+    const plaintext = input.trim();
     setInput('');
+
+    try {
+      let contentToSend = plaintext;
+      let isEncrypted = false;
+      let senderFingerprint = '';
+
+      if (sharedKeyInfo?.key) {
+        contentToSend = await encryptMessage(plaintext, sharedKeyInfo.key, sharedKeyInfo.myFingerprint);
+        isEncrypted = true;
+        senderFingerprint = sharedKeyInfo.myFingerprint;
+      }
+
+      wsRef.current.send(
+        JSON.stringify({
+          type: 'message',
+          room_id: roomId,
+          content: contentToSend,
+          is_encrypted: isEncrypted,
+          sender_pub_fingerprint: senderFingerprint,
+        })
+      );
+    } catch (err) {
+      console.error('Failed to send encrypted message:', err);
+    }
   };
 
   if (chatState === 'idle') {
     return (
       <div className="flex flex-col items-center justify-center py-8">
-        <div className="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 flex items-center justify-center mb-4">
-          <MessageSquare className="w-7 h-7 text-indigo-500 dark:text-indigo-400" />
+        <div className="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 flex items-center justify-center mb-4 relative">
+          <MessageSquare className="w-7 h-7 text-emerald-500 dark:text-emerald-400" />
+          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow">
+            <Lock className="w-2.5 h-2.5" />
+          </span>
         </div>
-        <h3 className="text-slate-800 dark:text-white font-semibold text-sm mb-1">Chat with the {type === 'flat' ? 'owner' : 'seeker'}</h3>
-        <p className="text-slate-500 dark:text-white/40 text-xs text-center mb-6 max-w-[250px]">
-          Start a conversation to ask about availability, flatmates, locality, and more.
+        <h3 className="text-slate-800 dark:text-white font-semibold text-sm mb-1">
+          End-to-End Encrypted Chat
+        </h3>
+        <p className="text-slate-500 dark:text-white/40 text-xs text-center mb-6 max-w-[280px]">
+          Start a private conversation directly with the {type === 'flat' ? 'owner' : 'seeker'}. Only participants hold the decryption keys.
         </p>
-        {devUserId ? (
+        {userId ? (
           <button
             onClick={startChat}
-            className="px-6 py-2.5 bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/25"
+            className="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 text-white text-sm font-semibold rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2"
           >
-            <MessageSquare className="w-4 h-4 inline mr-2" />
-            Start Conversation
+            <ShieldCheck className="w-4 h-4" />
+            Start Encrypted Conversation
           </button>
         ) : (
-          <p className="text-xs text-red-400">Set your Dev User ID in the auth bar to chat</p>
+          <p className="text-xs text-red-400">Select a user in the bottom dev bar to chat</p>
         )}
       </div>
     );
@@ -448,34 +507,53 @@ function ChatSlide({ pin, type }) {
   if (chatState === 'connecting') {
     return (
       <div className="flex flex-col items-center justify-center py-12">
-        <div className="w-6 h-6 border-2 border-indigo-500/30 border-t-indigo-400 rounded-full animate-spin mb-3" />
-        <p className="text-slate-500 dark:text-white/40 text-sm">Connecting...</p>
+        <div className="w-6 h-6 border-2 border-emerald-500/30 border-t-emerald-400 rounded-full animate-spin mb-3" />
+        <p className="text-slate-500 dark:text-white/40 text-sm">Negotiating E2EE cryptographic keys...</p>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col h-[300px]">
+    <div className="flex flex-col h-[320px]">
+      {/* E2EE Safety Banner */}
+      <div className="mb-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-between text-[11px] text-emerald-600 dark:text-emerald-400">
+        <span className="flex items-center gap-1 font-medium">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+          Zero-Knowledge AES-256-GCM
+        </span>
+        <span className="font-mono text-[10px] opacity-80">
+          {sharedKeyInfo?.myFingerprint ? `Key: ${sharedKeyInfo.myFingerprint.substring(0, 8)}...` : 'ECDH P-256'}
+        </span>
+      </div>
+
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto space-y-3 mb-3">
+      <div className="flex-1 overflow-y-auto space-y-3 mb-2 pr-1">
         {messages.length === 0 ? (
           <p className="text-sm text-slate-400 dark:text-white/30 text-center my-auto py-8">
-            Say hello! 👋
+            Say hello securely! 👋
           </p>
         ) : (
           messages.map((msg, i) => {
-            const isMe = msg.sender_id === devUserId;
+            const isMe = msg.sender_id === userId;
             return (
               <div key={i} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
-                  isMe
-                    ? 'bg-indigo-500 text-white rounded-tr-sm'
-                    : 'bg-slate-100 dark:bg-white/8 text-slate-800 dark:text-gray-100 border border-slate-200 dark:border-white/5 rounded-tl-sm'
-                }`}>
-                  <p>{msg.content}</p>
-                  <p className="text-[10px] opacity-50 text-right mt-1">
-                    {new Date(msg.created_at || Date.now()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                  </p>
+                <div
+                  className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm shadow-sm ${
+                    isMe
+                      ? 'bg-gradient-to-r from-emerald-600 to-indigo-600 text-white rounded-tr-xs'
+                      : 'bg-slate-100 dark:bg-white/8 text-slate-800 dark:text-gray-100 border border-slate-200 dark:border-white/5 rounded-tl-xs'
+                  }`}
+                >
+                  <p className="leading-relaxed break-words">{msg.decryptedContent || msg.content}</p>
+                  <div className="flex items-center justify-end gap-1.5 text-[10px] opacity-75 mt-1">
+                    {msg.isE2EE && <Lock className="w-2.5 h-2.5 text-emerald-300 inline" />}
+                    <span>
+                      {new Date(msg.created_at || Date.now()).toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
@@ -489,14 +567,14 @@ function ChatSlide({ pin, type }) {
         <input
           type="text"
           value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder="Type a message..."
-          className="flex-1 bg-slate-100 dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-full px-4 py-2 text-sm text-slate-800 dark:text-white outline-none focus:border-indigo-500 dark:focus:border-indigo-500"
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="🔒 Type an encrypted message..."
+          className="flex-1 bg-slate-100 dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-full px-4 py-2 text-sm text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-emerald-500 dark:focus:border-emerald-500"
         />
         <button
           type="submit"
           disabled={!input.trim()}
-          className="w-10 h-10 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white flex items-center justify-center disabled:opacity-50 transition-colors shrink-0"
+          className="w-10 h-10 rounded-full bg-gradient-to-r from-emerald-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 text-white flex items-center justify-center disabled:opacity-40 transition-all shrink-0 shadow-md"
         >
           <Send className="w-4 h-4 ml-0.5" />
         </button>

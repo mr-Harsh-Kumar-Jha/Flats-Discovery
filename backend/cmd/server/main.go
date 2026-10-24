@@ -169,6 +169,7 @@ func main() {
 
 	// WebSocket (no Chi timeout middleware — long-lived connection)
 	r.Get("/ws", chatHandler.HandleWS)
+	r.Get("/ws/chat", chatHandler.HandleWS)
 
 	// API v1
 	r.Route("/api/v1", func(r chi.Router) {
@@ -206,12 +207,15 @@ func main() {
 			// Matches
 			r.Get("/matches", matchHandler.ListMyMatches)
 
-			// Chat
+			// Chat & E2EE
 			r.Route("/chat", func(r chi.Router) {
 				r.Post("/rooms/direct", chatHandler.CreateDirectRoom)
 				r.Get("/rooms", chatHandler.ListMyRooms)
 				r.Get("/rooms/{roomId}/messages", chatHandler.ListMessages)
 				r.Get("/rooms/{roomId}/members", chatHandler.GetRoomMembers)
+				r.Get("/rooms/{roomId}/keys", chatHandler.GetRoomMemberKeys)
+				r.Post("/keys", chatHandler.RegisterPublicKey)
+				r.Get("/keys/{userId}", chatHandler.GetUserPublicKey)
 			})
 		})
 	})

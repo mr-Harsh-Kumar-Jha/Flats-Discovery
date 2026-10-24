@@ -142,13 +142,24 @@ export async function fetchMyMatches() {
 }
 
 // =========================================================================
-// Chat
+// Chat & E2EE
 // =========================================================================
 
-export async function createDirectRoom(matchId) {
+export async function createDirectRoom(params) {
+  let body = {};
+  if (typeof params === 'string') {
+    body = { match_id: params };
+  } else if (params && typeof params === 'object') {
+    body = {
+      match_id: params.matchId || params.match_id,
+      target_user_id: params.targetUserId || params.target_user_id,
+      pin_id: params.pinId || params.pin_id,
+    };
+  }
+
   const res = await request('/chat/rooms/direct', {
     method: 'POST',
-    body: JSON.stringify({ match_id: matchId }),
+    body: JSON.stringify(body),
   });
   return res.data;
 }
@@ -163,3 +174,22 @@ export async function fetchMessages(roomId, limit = 50, offset = 0) {
   const res = await request(`/chat/rooms/${roomId}/messages?${params}`);
   return res;
 }
+
+export async function registerPublicKey(keyData) {
+  const res = await request('/chat/keys', {
+    method: 'POST',
+    body: JSON.stringify(keyData),
+  });
+  return res.data;
+}
+
+export async function fetchUserPublicKey(userId) {
+  const res = await request(`/chat/keys/${userId}`);
+  return res.data;
+}
+
+export async function fetchRoomKeys(roomId) {
+  const res = await request(`/chat/rooms/${roomId}/keys`);
+  return res;
+}
+

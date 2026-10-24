@@ -24,47 +24,91 @@ func NewChatRepository(pool *pgxpool.Pool) *ChatRepository {
 // Room Operations
 // =========================================================================
 
-// CreateDirectRoom creates a 1:1 chat room linked to a match.
-// It auto-adds both match participants as members.
-// Returns the existing room if one already exists for this match.
-func (r *ChatRepository) CreateDirectRoom(ctx context.Context, matchID string) (*model.ChatRoom, error) {
+// CreateDirectRoom creates or retrieves a 1:1 chat room.
+// Supports creating by match_id, target_user_id, or pin_id (finding pin owner).
+// Returns the existing room if one already exists between the participants.
+func (r *ChatRepository) CreateDirectRoom(ctx context.Context, currentUserID string, req model.CreateDirectRoomRequest) (*model.ChatRoom, error) {
 	tx, err := r.pool.Begin(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("beginning transaction: %w", err)
 	}
 	defer tx.Rollback(ctx)
 
-	// Try to get existing room for this match
-	var room model.ChatRoom
-	err = tx.QueryRow(ctx, `
-		SELECT id, match_id, room_type::text, is_active, last_message_at, created_at
-		FROM chat_rooms
-		WHERE match_id = $1 AND room_type = 'DIRECT'
-	`, matchID).Scan(&room.ID, &room.MatchID, &room.RoomType, &room.IsActive, &room.LastMessageAt, &room.CreatedAt)
-
-	if err == nil {
-		// Room already exists
-		return &room, tx.Commit(ctx)
-	}
-	if err != pgx.ErrNoRows {
-		return nil, fmt.Errorf("checking existing room: %w", err)
-	}
-
-	// Get the two users from the match
 	var seekerUserID, flatUserID string
-	err = tx.QueryRow(ctx, `
-		SELECT seeker_user_id, flat_user_id FROM matches WHERE id = $1
-	`, matchID).Scan(&seekerUserID, &flatUserID)
-	if err != nil {
-		return nil, fmt.Errorf("fetching match users: %w", err)
+	var matchIDPtr *string
+
+	if req.MatchID != "" {
+		// Try to get existing room for this match
+		var room model.ChatRoom
+		err = tx.QueryRow(ctx, `
+			SELECT id, match_id, room_type::text, is_active, last_message_at, created_at
+			FROM chat_rooms
+			WHERE match_id = $1 AND room_type = 'DIRECT'
+		`, req.MatchID).Scan(&room.ID, &room.MatchID, &room.RoomType, &room.IsActive, &room.LastMessageAt, &room.CreatedAt)
+
+		if err == nil {
+			return &room, tx.Commit(ctx)
+		}
+		if err != pgx.ErrNoRows {
+			return nil, fmt.Errorf("checking existing room for match: %w", err)
+		}
+
+		// Get the two users from the match
+		err = tx.QueryRow(ctx, `
+			SELECT seeker_user_id, flat_user_id FROM matches WHERE id = $1
+		`, req.MatchID).Scan(&seekerUserID, &flatUserID)
+		if err != nil {
+			return nil, fmt.Errorf("fetching match users: %w", err)
+		}
+		matchIDPtr = &req.MatchID
+	} else {
+		targetUserID := req.TargetUserID
+		if targetUserID == "" && req.PinID != "" {
+			// Look up owner of flat pin
+			_ = tx.QueryRow(ctx, `SELECT user_id FROM flat_pins WHERE id = $1`, req.PinID).Scan(&targetUserID)
+			if targetUserID == "" {
+				// Look up owner of seeker pin
+				_ = tx.QueryRow(ctx, `SELECT user_id FROM seeker_pins WHERE id = $1`, req.PinID).Scan(&targetUserID)
+			}
+		}
+
+		if targetUserID == "" {
+			return nil, fmt.Errorf("target user or valid pin_id not found")
+		}
+
+		if targetUserID == currentUserID {
+			return nil, fmt.Errorf("cannot start a chat with yourself")
+		}
+
+		// Check if a direct room already exists between currentUserID and targetUserID
+		var room model.ChatRoom
+		err = tx.QueryRow(ctx, `
+			SELECT cr.id, cr.match_id, cr.room_type::text, cr.is_active, cr.last_message_at, cr.created_at
+			FROM chat_rooms cr
+			JOIN chat_room_members m1 ON m1.room_id = cr.id AND m1.user_id = $1 AND m1.left_at IS NULL
+			JOIN chat_room_members m2 ON m2.room_id = cr.id AND m2.user_id = $2 AND m2.left_at IS NULL
+			WHERE cr.room_type = 'DIRECT' AND cr.is_active = true
+			LIMIT 1
+		`, currentUserID, targetUserID).Scan(&room.ID, &room.MatchID, &room.RoomType, &room.IsActive, &room.LastMessageAt, &room.CreatedAt)
+
+		if err == nil {
+			return &room, tx.Commit(ctx)
+		}
+		if err != pgx.ErrNoRows {
+			return nil, fmt.Errorf("checking existing user-to-user room: %w", err)
+		}
+
+		seekerUserID = currentUserID
+		flatUserID = targetUserID
 	}
 
 	// Create the room
+	var room model.ChatRoom
 	err = tx.QueryRow(ctx, `
 		INSERT INTO chat_rooms (match_id, room_type)
 		VALUES ($1, 'DIRECT')
 		RETURNING id, match_id, room_type::text, is_active, last_message_at, created_at
-	`, matchID).Scan(&room.ID, &room.MatchID, &room.RoomType, &room.IsActive, &room.LastMessageAt, &room.CreatedAt)
+	`, matchIDPtr).Scan(&room.ID, &room.MatchID, &room.RoomType, &room.IsActive, &room.LastMessageAt, &room.CreatedAt)
 	if err != nil {
 		return nil, fmt.Errorf("creating chat room: %w", err)
 	}
@@ -78,13 +122,12 @@ func (r *ChatRepository) CreateDirectRoom(ctx context.Context, matchID string) (
 		return nil, fmt.Errorf("adding room members: %w", err)
 	}
 
-	// Update match status to CHAT_INITIATED
-	_, err = tx.Exec(ctx, `
-		UPDATE matches SET status = 'CHAT_INITIATED', chat_initiated_at = NOW()
-		WHERE id = $1 AND status IN ('PENDING', 'VIEWED')
-	`, matchID)
-	if err != nil {
-		return nil, fmt.Errorf("updating match status: %w", err)
+	// If match was provided, update match status
+	if req.MatchID != "" {
+		_, _ = tx.Exec(ctx, `
+			UPDATE matches SET status = 'CHAT_INITIATED', chat_initiated_at = NOW()
+			WHERE id = $1 AND status IN ('PENDING', 'VIEWED')
+		`, req.MatchID)
 	}
 
 	if err := tx.Commit(ctx); err != nil {
@@ -202,27 +245,36 @@ func (r *ChatRepository) GetRoomMemberUserIDs(ctx context.Context, roomID string
 // Message Operations
 // =========================================================================
 
-// InsertMessage stores a chat message (with PII scrubbing already applied).
-func (r *ChatRepository) InsertMessage(ctx context.Context, roomID, senderID, content, originalContent, contentType string, piiDetected bool, piiPatterns []string) (*model.ChatMessage, error) {
+// InsertMessage stores a chat message (with PII scrubbing for plaintext, or encrypted flag/fingerprint for E2EE).
+func (r *ChatRepository) InsertMessage(
+	ctx context.Context,
+	roomID, senderID, content, originalContent, contentType string,
+	piiDetected bool, piiPatterns []string,
+	isEncrypted bool, senderPubFingerprint *string,
+) (*model.ChatMessage, error) {
 	var msg model.ChatMessage
 	var origPtr *string
-	if piiDetected {
+	if piiDetected && !isEncrypted {
 		origPtr = &originalContent
 	}
 
 	err := r.pool.QueryRow(ctx, `
 		WITH inserted AS (
-			INSERT INTO chat_messages (room_id, sender_id, content, original_content, content_type, pii_detected, pii_patterns)
-			VALUES ($1, $2, $3, $4, $5::message_content_type, $6, $7)
-			RETURNING id, room_id, sender_id, content, content_type::text, pii_detected, pii_patterns, created_at::text
+			INSERT INTO chat_messages (
+				room_id, sender_id, content, original_content, content_type,
+				pii_detected, pii_patterns, is_encrypted, sender_pub_fingerprint
+			)
+			VALUES ($1, $2, $3, $4, $5::message_content_type, $6, $7, $8, $9)
+			RETURNING id, room_id, sender_id, content, content_type::text,
+			          pii_detected, pii_patterns, is_encrypted, sender_pub_fingerprint, created_at::text
 		),
 		room_update AS (
 			UPDATE chat_rooms SET last_message_at = NOW() WHERE id = $1
 		)
 		SELECT * FROM inserted
-	`, roomID, senderID, content, origPtr, contentType, piiDetected, piiPatterns,
+	`, roomID, senderID, content, origPtr, contentType, piiDetected, piiPatterns, isEncrypted, senderPubFingerprint,
 	).Scan(&msg.ID, &msg.RoomID, &msg.SenderID, &msg.Content, &msg.ContentType,
-		&msg.PIIDetected, &msg.PIIPatterns, &msg.CreatedAt)
+		&msg.PIIDetected, &msg.PIIPatterns, &msg.IsEncrypted, &msg.SenderPubFingerprint, &msg.CreatedAt)
 	if err != nil {
 		return nil, fmt.Errorf("inserting message: %w", err)
 	}
@@ -233,7 +285,7 @@ func (r *ChatRepository) InsertMessage(ctx context.Context, roomID, senderID, co
 func (r *ChatRepository) ListMessages(ctx context.Context, roomID string, p model.PaginationParams) ([]model.ChatMessage, error) {
 	rows, err := r.pool.Query(ctx, `
 		SELECT cm.id, cm.room_id, cm.sender_id, cm.content, cm.content_type::text,
-		       cm.pii_detected, cm.pii_patterns, cm.created_at::text,
+		       cm.pii_detected, cm.pii_patterns, cm.is_encrypted, cm.sender_pub_fingerprint, cm.created_at::text,
 		       u.display_name AS sender_display_name
 		FROM chat_messages cm
 		JOIN users u ON u.id = cm.sender_id
@@ -251,7 +303,7 @@ func (r *ChatRepository) ListMessages(ctx context.Context, roomID string, p mode
 		var m model.ChatMessage
 		if err := rows.Scan(
 			&m.ID, &m.RoomID, &m.SenderID, &m.Content, &m.ContentType,
-			&m.PIIDetected, &m.PIIPatterns, &m.CreatedAt,
+			&m.PIIDetected, &m.PIIPatterns, &m.IsEncrypted, &m.SenderPubFingerprint, &m.CreatedAt,
 			&m.SenderDisplayName,
 		); err != nil {
 			return nil, err
@@ -275,4 +327,73 @@ func (r *ChatRepository) GetSenderDisplayName(ctx context.Context, userID string
 	var name string
 	err := r.pool.QueryRow(ctx, `SELECT display_name FROM users WHERE id = $1`, userID).Scan(&name)
 	return name, err
+}
+
+// =========================================================================
+// E2EE Keys Operations
+// =========================================================================
+
+// SaveUserE2EEKey saves or updates the user's public ECDH identity key.
+func (r *ChatRepository) SaveUserE2EEKey(ctx context.Context, userID, publicKey, algorithm, fingerprint string) (*model.UserE2EEKey, error) {
+	if algorithm == "" {
+		algorithm = "ECDH-P256"
+	}
+	var k model.UserE2EEKey
+	err := r.pool.QueryRow(ctx, `
+		INSERT INTO user_e2ee_keys (user_id, public_key, algorithm, fingerprint, created_at, updated_at)
+		VALUES ($1, $2, $3, $4, NOW(), NOW())
+		ON CONFLICT (user_id) DO UPDATE SET
+			public_key = EXCLUDED.public_key,
+			algorithm = EXCLUDED.algorithm,
+			fingerprint = EXCLUDED.fingerprint,
+			updated_at = NOW()
+		RETURNING user_id, public_key, algorithm, fingerprint, created_at, updated_at
+	`, userID, publicKey, algorithm, fingerprint).Scan(&k.UserID, &k.PublicKey, &k.Algorithm, &k.Fingerprint, &k.CreatedAt, &k.UpdatedAt)
+	if err != nil {
+		return nil, fmt.Errorf("saving E2EE key: %w", err)
+	}
+	return &k, nil
+}
+
+// GetUserE2EEKey returns the ECDH public key for a user.
+func (r *ChatRepository) GetUserE2EEKey(ctx context.Context, userID string) (*model.UserE2EEKey, error) {
+	var k model.UserE2EEKey
+	err := r.pool.QueryRow(ctx, `
+		SELECT user_id, public_key, algorithm, fingerprint, created_at, updated_at
+		FROM user_e2ee_keys
+		WHERE user_id = $1
+	`, userID).Scan(&k.UserID, &k.PublicKey, &k.Algorithm, &k.Fingerprint, &k.CreatedAt, &k.UpdatedAt)
+	if err != nil {
+		if err == pgx.ErrNoRows {
+			return nil, nil
+		}
+		return nil, fmt.Errorf("getting user E2EE key: %w", err)
+	}
+	return &k, nil
+}
+
+// GetRoomMemberKeys returns public keys of all active members in a room.
+func (r *ChatRepository) GetRoomMemberKeys(ctx context.Context, roomID string) ([]model.RoomMemberKey, error) {
+	rows, err := r.pool.Query(ctx, `
+		SELECT crm.user_id, u.display_name,
+		       COALESCE(k.public_key, ''), COALESCE(k.algorithm, 'ECDH-P256'), COALESCE(k.fingerprint, '')
+		FROM chat_room_members crm
+		JOIN users u ON u.id = crm.user_id
+		LEFT JOIN user_e2ee_keys k ON k.user_id = crm.user_id
+		WHERE crm.room_id = $1 AND crm.left_at IS NULL
+	`, roomID)
+	if err != nil {
+		return nil, fmt.Errorf("fetching room member keys: %w", err)
+	}
+	defer rows.Close()
+
+	var keys []model.RoomMemberKey
+	for rows.Next() {
+		var mk model.RoomMemberKey
+		if err := rows.Scan(&mk.UserID, &mk.DisplayName, &mk.PublicKey, &mk.Algorithm, &mk.Fingerprint); err != nil {
+			return nil, err
+		}
+		keys = append(keys, mk)
+	}
+	return keys, rows.Err()
 }

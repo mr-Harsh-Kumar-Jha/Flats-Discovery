@@ -3,6 +3,7 @@ package chat
 import (
 	"context"
 	"encoding/json"
+	"strings"
 	"time"
 
 	"github.com/gorilla/websocket"
@@ -161,6 +162,8 @@ func (c *Client) handleIncoming(raw []byte) {
 	}
 
 	switch msg.Type {
+	case model.WSTypeSubscribe:
+		c.handleSubscribe(msg)
 	case model.WSTypeMessage:
 		c.handleChatMessage(msg)
 	case model.WSTypeRead:
@@ -169,6 +172,17 @@ func (c *Client) handleIncoming(raw []byte) {
 		c.handleTypingIndicator(msg)
 	default:
 		c.sendError("unknown message type: " + msg.Type)
+	}
+}
+
+// handleSubscribe dynamically adds this client to a room broadcast channel.
+func (c *Client) handleSubscribe(msg model.WSIncomingMessage) {
+	if msg.RoomID == "" {
+		return
+	}
+	isMember, err := c.chatRepo.IsRoomMember(c.ctx, msg.RoomID, c.userID)
+	if err == nil && isMember {
+		c.hub.SubscribeToRoom(c, msg.RoomID)
 	}
 }
 
@@ -191,13 +205,27 @@ func (c *Client) handleChatMessage(msg model.WSIncomingMessage) {
 		contentType = model.ContentTypeText
 	}
 
-	// PII scrubbing
-	piiResult := ScrubPII(msg.Content)
+	// Detect if message is end-to-end encrypted
+	isEncrypted := msg.IsEncrypted || strings.HasPrefix(msg.Content, "e2ee:")
+	var senderFpPtr *string
+	if msg.SenderPubFingerprint != "" {
+		senderFpPtr = &msg.SenderPubFingerprint
+	}
 
 	displayContent := msg.Content
 	originalContent := msg.Content
-	if piiResult.HasPII {
-		displayContent = piiResult.ScrubbedContent
+	var piiResult PIIResult
+
+	if isEncrypted {
+		// E2EE payload is ciphertext: server cannot read or scrub it
+		piiResult.HasPII = false
+		originalContent = ""
+	} else {
+		// Plaintext message: perform PII scrubbing
+		piiResult = ScrubPII(msg.Content)
+		if piiResult.HasPII {
+			displayContent = piiResult.ScrubbedContent
+		}
 	}
 
 	// Store the message
@@ -205,6 +233,7 @@ func (c *Client) handleChatMessage(msg model.WSIncomingMessage) {
 		c.ctx, msg.RoomID, c.userID,
 		displayContent, originalContent, contentType,
 		piiResult.HasPII, piiResult.Patterns,
+		isEncrypted, senderFpPtr,
 	)
 	if err != nil {
 		c.logger.Error("failed to store message", zap.Error(err))
@@ -217,16 +246,18 @@ func (c *Client) handleChatMessage(msg model.WSIncomingMessage) {
 
 	// Broadcast to room
 	outgoing := model.WSOutgoingMessage{
-		Type:        model.WSTypeMessage,
-		RoomID:      msg.RoomID,
-		MessageID:   stored.ID,
-		SenderID:    c.userID,
-		SenderName:  senderName,
-		Content:     displayContent,
-		ContentType: contentType,
-		PIIDetected: piiResult.HasPII,
-		PIIPatterns: piiResult.Patterns,
-		CreatedAt:   stored.CreatedAt,
+		Type:                 model.WSTypeMessage,
+		RoomID:               msg.RoomID,
+		MessageID:            stored.ID,
+		SenderID:             c.userID,
+		SenderName:           senderName,
+		Content:              displayContent,
+		ContentType:          contentType,
+		PIIDetected:          piiResult.HasPII,
+		PIIPatterns:          piiResult.Patterns,
+		IsEncrypted:          isEncrypted,
+		SenderPubFingerprint: msg.SenderPubFingerprint,
+		CreatedAt:            stored.CreatedAt,
 	}
 
 	outBytes, _ := json.Marshal(outgoing)

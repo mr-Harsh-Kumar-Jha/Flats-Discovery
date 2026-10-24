@@ -52,9 +52,11 @@ func NewChatHandler(chatRepo *repository.ChatRepository, hub *chat.Hub, logger *
 // After connection, the client is automatically subscribed to all
 // rooms they are a member of.
 func (h *ChatHandler) HandleWS(w http.ResponseWriter, r *http.Request) {
-	// Extract user ID from query parameter (dev mode)
-	// Production: validate JWT from query param or cookie
+	// Extract user ID from query parameter: support both 'token' and 'user_id' (dev mode)
 	userID := r.URL.Query().Get("token")
+	if userID == "" {
+		userID = r.URL.Query().Get("user_id")
+	}
 	if userID == "" {
 		// Also check Authorization header for non-browser clients
 		authHeader := r.Header.Get("Authorization")
@@ -63,7 +65,7 @@ func (h *ChatHandler) HandleWS(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if userID == "" {
-		http.Error(w, "authentication required: provide ?token=<user_id>", http.StatusUnauthorized)
+		http.Error(w, "authentication required: provide ?token=<user_id> or ?user_id=<user_id>", http.StatusUnauthorized)
 		return
 	}
 
@@ -106,7 +108,7 @@ func (h *ChatHandler) HandleWS(w http.ResponseWriter, r *http.Request) {
 // =========================================================================
 
 // CreateDirectRoom handles POST /api/v1/chat/rooms/direct
-// Creates a 1:1 chat room from an existing match.
+// Creates or returns a 1:1 chat room from an existing match, target_user_id, or pin_id.
 func (h *ChatHandler) CreateDirectRoom(w http.ResponseWriter, r *http.Request) {
 	userID := middleware.GetUserID(r.Context())
 
@@ -116,15 +118,15 @@ func (h *ChatHandler) CreateDirectRoom(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if req.MatchID == "" {
-		Error(w, 400, "match_id is required", "")
+	if req.MatchID == "" && req.TargetUserID == "" && req.PinID == "" {
+		Error(w, 400, "match_id, target_user_id, or pin_id is required", "")
 		return
 	}
 
-	room, err := h.chatRepo.CreateDirectRoom(r.Context(), req.MatchID)
+	room, err := h.chatRepo.CreateDirectRoom(r.Context(), userID, req)
 	if err != nil {
 		h.logger.Error("failed to create direct room", zap.Error(err), zap.String("match_id", req.MatchID))
-		Error(w, 500, "failed to create chat room", "")
+		Error(w, 500, "failed to create chat room: "+err.Error(), "")
 		return
 	}
 
@@ -136,7 +138,6 @@ func (h *ChatHandler) CreateDirectRoom(w http.ResponseWriter, r *http.Request) {
 
 	h.logger.Info("chat room created",
 		zap.String("room_id", room.ID),
-		zap.String("match_id", req.MatchID),
 		zap.String("created_by", userID),
 	)
 
@@ -225,3 +226,82 @@ func (h *ChatHandler) GetRoomMembers(w http.ResponseWriter, r *http.Request) {
 
 	JSON(w, 200, members, &model.Meta{Count: len(members)})
 }
+
+// =========================================================================
+// E2EE Key Management Endpoints
+// =========================================================================
+
+// RegisterPublicKey handles POST /api/v1/chat/keys
+// Publishes or updates the caller's public ECDH identity key.
+func (h *ChatHandler) RegisterPublicKey(w http.ResponseWriter, r *http.Request) {
+	userID := middleware.GetUserID(r.Context())
+
+	var req model.RegisterKeyRequest
+	if err := DecodeJSON(r, &req); err != nil {
+		Error(w, 400, "invalid request body", err.Error())
+		return
+	}
+
+	if req.PublicKey == "" {
+		Error(w, 400, "public_key is required", "")
+		return
+	}
+	if req.Fingerprint == "" {
+		Error(w, 400, "fingerprint is required", "")
+		return
+	}
+
+	saved, err := h.chatRepo.SaveUserE2EEKey(r.Context(), userID, req.PublicKey, req.Algorithm, req.Fingerprint)
+	if err != nil {
+		h.logger.Error("failed to save E2EE key", zap.Error(err), zap.String("user_id", userID))
+		Error(w, 500, "failed to register E2EE public key", "")
+		return
+	}
+
+	JSON(w, 200, saved, nil)
+}
+
+// GetUserPublicKey handles GET /api/v1/chat/keys/{userId}
+func (h *ChatHandler) GetUserPublicKey(w http.ResponseWriter, r *http.Request) {
+	targetUserID := chi.URLParam(r, "userId")
+	if targetUserID == "" {
+		Error(w, 400, "userId is required", "")
+		return
+	}
+
+	key, err := h.chatRepo.GetUserE2EEKey(r.Context(), targetUserID)
+	if err != nil {
+		h.logger.Error("failed to get user E2EE key", zap.Error(err), zap.String("user_id", targetUserID))
+		Error(w, 500, "failed to fetch public key", "")
+		return
+	}
+	if key == nil {
+		Error(w, 404, "public key not found for user", "")
+		return
+	}
+
+	JSON(w, 200, key, nil)
+}
+
+// GetRoomMemberKeys handles GET /api/v1/chat/rooms/{roomId}/keys
+// Fetches the public keys of all active members in a room for E2EE key derivation.
+func (h *ChatHandler) GetRoomMemberKeys(w http.ResponseWriter, r *http.Request) {
+	userID := middleware.GetUserID(r.Context())
+	roomID := chi.URLParam(r, "roomId")
+
+	isMember, err := h.chatRepo.IsRoomMember(r.Context(), roomID, userID)
+	if err != nil || !isMember {
+		Error(w, 403, "not a member of this room", "")
+		return
+	}
+
+	keys, err := h.chatRepo.GetRoomMemberKeys(r.Context(), roomID)
+	if err != nil {
+		h.logger.Error("failed to fetch room member keys", zap.Error(err), zap.String("room_id", roomID))
+		Error(w, 500, "failed to fetch room keys", "")
+		return
+	}
+
+	JSON(w, 200, keys, &model.Meta{Count: len(keys)})
+}
+
