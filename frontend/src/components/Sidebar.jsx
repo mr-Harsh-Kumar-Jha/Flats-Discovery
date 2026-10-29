@@ -378,25 +378,25 @@ function FlatPinCard({ pin, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all group mb-0.5"
+      className="w-full text-left p-3 rounded-xl hover:bg-slate-100/70 dark:hover:bg-white/5 transition-all group mb-0.5"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 min-w-0">
-          <div className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
-          <span className="font-semibold text-emerald-600 dark:text-emerald-400 text-[13px]">
+          <div className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+          <span className="font-semibold text-emerald-700 dark:text-emerald-400 text-[13px]">
             ₹{formatRent(pin.rent)}/mo
           </span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-white/40 font-medium">
+          <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-white/70 font-semibold">
             {pin.bhk_config}
           </span>
         </div>
       </div>
-      <div className="mt-1 ml-4 text-[11px] text-slate-400 dark:text-white/30 truncate">
+      <div className="mt-1 ml-4 text-[11px] text-slate-600 dark:text-white/60 font-medium truncate">
         {pin.property_type} · {formatFurnishing(pin.furnishing)}
         {pin.parking && pin.parking !== 'NONE' && ` · 🅿️`}
       </div>
       {pin.description && (
-        <p className="mt-1 ml-4 text-[11px] text-slate-300 dark:text-white/20 line-clamp-1 group-hover:text-slate-500 dark:group-hover:text-white/30 transition-colors">
+        <p className="mt-1 ml-4 text-[11px] text-slate-500 dark:text-white/40 line-clamp-1 group-hover:text-slate-700 dark:group-hover:text-white/60 transition-colors">
           {pin.description}
         </p>
       )}
@@ -409,19 +409,19 @@ function SeekerPinCard({ pin, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all group mb-0.5"
+      className="w-full text-left p-3 rounded-xl hover:bg-slate-100/70 dark:hover:bg-white/5 transition-all group mb-0.5"
     >
       <div className="flex items-center gap-2 min-w-0">
-        <div className="w-2 h-2 rounded-full bg-indigo-400 shrink-0" />
-        <span className="font-semibold text-indigo-600 dark:text-indigo-400 text-[13px]">
+        <div className="w-2 h-2 rounded-full bg-indigo-500 shrink-0" />
+        <span className="font-semibold text-indigo-700 dark:text-indigo-400 text-[13px]">
           ₹{formatRent(pin.budget_max)} budget
         </span>
       </div>
-      <div className="mt-1 ml-4 text-[11px] text-slate-400 dark:text-white/30 truncate">
+      <div className="mt-1 ml-4 text-[11px] text-slate-600 dark:text-white/60 font-medium truncate">
         {bhks} · {pin.search_radius_km || 5}km radius
       </div>
       {pin.notes && (
-        <p className="mt-1 ml-4 text-[11px] text-slate-300 dark:text-white/20 line-clamp-1 group-hover:text-slate-500 dark:group-hover:text-white/30 transition-colors">
+        <p className="mt-1 ml-4 text-[11px] text-slate-500 dark:text-white/40 line-clamp-1 group-hover:text-slate-700 dark:group-hover:text-white/60 transition-colors">
           {pin.notes}
         </p>
       )}
