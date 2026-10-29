@@ -171,17 +171,17 @@ export default function CreatePinModal({ onClose, initialTab = 'flat', coords })
 
               {/* Rent */}
               <FieldGroup label="Monthly Rent" required>
-                <div className="relative">
-                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-white/30 text-sm pointer-events-none">₹</span>
+                <div className="relative flex items-center">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-white/40 text-sm font-medium pointer-events-none select-none z-10">₹</span>
                   <input
                     type="number"
                     required
                     placeholder="25000"
                     value={flatForm.rent}
                     onChange={e => ff('rent', e.target.value)}
-                    className="form-input pl-7"
+                    className="form-input !pl-9 !pr-20"
                   />
-                  <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-white/30 text-xs pointer-events-none">/ month</span>
+                  <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-white/30 text-xs pointer-events-none select-none">/ month</span>
                 </div>
               </FieldGroup>
 
@@ -279,15 +279,15 @@ export default function CreatePinModal({ onClose, initialTab = 'flat', coords })
 
               {/* Max Budget */}
               <FieldGroup label="Max Budget" required>
-                <div className="relative">
-                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-white/30 text-sm pointer-events-none">₹</span>
+                <div className="relative flex items-center">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-white/40 text-sm font-medium pointer-events-none select-none z-10">₹</span>
                   <input
                     type="number"
                     required
                     placeholder="30000"
                     value={seekerForm.budget_max}
                     onChange={e => sf('budget_max', e.target.value)}
-                    className="form-input pl-7"
+                    className="form-input !pl-9"
                   />
                 </div>
               </FieldGroup>

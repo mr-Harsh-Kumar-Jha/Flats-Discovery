@@ -207,23 +207,25 @@ body {
 }
 
 /* ── Form input (used in CreatePinModal) ── */
-.form-input {
-  width: 100%;
-  padding: 11px 16px;
-  border-radius: 10px;
-  background: var(--surface-input);
-  color: var(--text-primary);
-  border: 1px solid var(--border-default);
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s;
-  font-family: inherit;
-}
-.form-input:focus {
-  border-color: rgba(139, 92, 246, 0.6);
-}
-.form-input::placeholder {
-  color: var(--text-muted);
+@layer components {
+  .form-input {
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 10px;
+    background: var(--surface-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-default);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+  }
+  .form-input:focus {
+    border-color: rgba(139, 92, 246, 0.6);
+  }
+  .form-input::placeholder {
+    color: var(--text-muted);
+  }
 }
 /* Prevent iOS Safari auto-zoom on input focus */
 @media (max-width: 768px) {
