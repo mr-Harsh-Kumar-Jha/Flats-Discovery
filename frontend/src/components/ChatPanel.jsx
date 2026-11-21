@@ -199,12 +199,12 @@ export default function ChatPanel() {
       <button
         id="btn-floating-chat"
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute bottom-24 right-8 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 text-slate-800 dark:text-white p-3.5 rounded-full shadow-2xl transition-all hover:scale-105 flex items-center justify-center group"
+        className="fixed md:absolute bottom-14 right-4 md:bottom-12 md:right-6 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 text-slate-800 dark:text-white p-3 rounded-full shadow-2xl transition-all hover:scale-105 flex items-center justify-center group"
         title="Encrypted Chat"
       >
         <div className="relative">
-          <MessageSquare className="w-6 h-6 text-indigo-500 dark:text-indigo-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors" />
-          <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 flex items-center justify-center">
+          <MessageSquare className="w-5 h-5 text-indigo-500 dark:text-indigo-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors" />
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 flex items-center justify-center">
             <Lock className="w-1.5 h-1.5 text-white" />
           </span>
         </div>
@@ -212,7 +212,7 @@ export default function ChatPanel() {
 
       {/* Main Chat Panel Container */}
       {isOpen && (
-        <div className="absolute bottom-8 right-24 z-40 w-[26rem] h-[36rem] bg-white dark:bg-[#0c101d] border border-slate-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed md:absolute bottom-14 right-3 md:bottom-12 md:right-6 z-50 w-[calc(100vw-24px)] sm:w-96 md:w-[26rem] h-[34rem] max-h-[82vh] bg-white dark:bg-[#0c101d] border border-slate-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
           {/* Header */}
           <div className="px-4 py-3 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur">
             <div className="flex items-center gap-2.5 min-w-0">

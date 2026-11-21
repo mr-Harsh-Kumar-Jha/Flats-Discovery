@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS flatmate_swipes CASCADE;
+DROP TABLE IF EXISTS housing_societies CASCADE;

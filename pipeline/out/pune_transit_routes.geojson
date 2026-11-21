@@ -1,0 +1,237 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "purple-line",
+        "name": "Pune Metro Purple Line (Line 1)",
+        "route_type": "metro",
+        "color": "#9333ea",
+        "details": "PCMC \u27f7 Swargate (14 stations)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.8033,
+            18.6293
+          ],
+          [
+            73.8157,
+            18.6145
+          ],
+          [
+            73.8201,
+            18.6093
+          ],
+          [
+            73.8273,
+            18.5996
+          ],
+          [
+            73.8311,
+            18.5911
+          ],
+          [
+            73.8338,
+            18.5838
+          ],
+          [
+            73.8381,
+            18.5697
+          ],
+          [
+            73.8421,
+            18.5623
+          ],
+          [
+            73.8458,
+            18.5503
+          ],
+          [
+            73.8497,
+            18.5322
+          ],
+          [
+            73.8569,
+            18.5268
+          ],
+          [
+            73.8596,
+            18.5214
+          ],
+          [
+            73.8586,
+            18.512
+          ],
+          [
+            73.8575,
+            18.4997
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aqua-line",
+        "name": "Pune Metro Aqua Line (Line 2)",
+        "route_type": "metro",
+        "color": "#06b6d4",
+        "details": "Vanaz \u27f7 Ramwadi (16 stations)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.8052,
+            18.5072
+          ],
+          [
+            73.8141,
+            18.5096
+          ],
+          [
+            73.8221,
+            18.5089
+          ],
+          [
+            73.8288,
+            18.5074
+          ],
+          [
+            73.8381,
+            18.512
+          ],
+          [
+            73.8444,
+            18.5164
+          ],
+          [
+            73.8474,
+            18.5201
+          ],
+          [
+            73.8533,
+            18.5227
+          ],
+          [
+            73.8569,
+            18.5268
+          ],
+          [
+            73.8645,
+            18.5272
+          ],
+          [
+            73.8744,
+            18.5289
+          ],
+          [
+            73.8777,
+            18.5327
+          ],
+          [
+            73.8834,
+            18.5406
+          ],
+          [
+            73.8867,
+            18.5453
+          ],
+          [
+            73.9086,
+            18.557
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "line-3",
+        "name": "Pune Metro Line 3 (Hinjewadi - Shivajinagar)",
+        "route_type": "metro",
+        "color": "#ec4899",
+        "details": "Megapolis Circle \u27f7 District Court (23 stations)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.7389,
+            18.5913
+          ],
+          [
+            73.748,
+            18.595
+          ],
+          [
+            73.762,
+            18.592
+          ],
+          [
+            73.768,
+            18.58
+          ],
+          [
+            73.778,
+            18.567
+          ],
+          [
+            73.792,
+            18.558
+          ],
+          [
+            73.8296,
+            18.5314
+          ],
+          [
+            73.8569,
+            18.5268
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "pune-suburban-rail",
+        "name": "Pune - Lonavala Suburban Local Rail",
+        "route_type": "railway",
+        "color": "#dc2626",
+        "details": "Pune Junction \u27f7 Shivajinagar \u27f7 Khadki \u27f7 Pimpri \u27f7 Dehu Rd \u27f7 Lonavala"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.8744,
+            18.5289
+          ],
+          [
+            73.852,
+            18.531
+          ],
+          [
+            73.834,
+            18.562
+          ],
+          [
+            73.818,
+            18.598
+          ],
+          [
+            73.795,
+            18.625
+          ],
+          [
+            73.745,
+            18.665
+          ]
+        ]
+      }
+    }
+  ]
+}

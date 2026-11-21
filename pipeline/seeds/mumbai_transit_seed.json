@@ -1,0 +1,38 @@
+{
+  "elements": [
+    { "type": "node", "id": 2001, "lat": 19.1306, "lon": 72.8205, "tags": { "name": "Versova", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2002, "lat": 19.1255, "lon": 72.8315, "tags": { "name": "D.N. Nagar (Interchange Line 1/2A)", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2003, "lat": 19.1205, "lon": 72.8465, "tags": { "name": "Andheri Metro (Interchange Railway)", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2004, "lat": 19.1155, "lon": 72.8570, "tags": { "name": "Western Express Highway (WEH)", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2005, "lat": 19.1120, "lon": 72.8680, "tags": { "name": "Chakala (J.B. Nagar)", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2006, "lat": 19.1100, "lon": 72.8750, "tags": { "name": "Airport Road", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2007, "lat": 19.1110, "lon": 72.8850, "tags": { "name": "Marol Naka (Interchange Line 3)", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2008, "lat": 19.1080, "lon": 72.8980, "tags": { "name": "Saki Naka", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2009, "lat": 19.0860, "lon": 72.9080, "tags": { "name": "Ghatkopar (Interchange Central Railway)", "station": "subway", "line": "Line 1" } },
+    { "type": "node", "id": 2010, "lat": 19.0657, "lon": 72.8687, "tags": { "name": "BKC (Line 3 Aqua)", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2011, "lat": 19.0880, "lon": 72.8520, "tags": { "name": "Bandra Colony (Line 3)", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2012, "lat": 19.0980, "lon": 72.8560, "tags": { "name": "Santacruz Metro (Line 3)", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2013, "lat": 19.0890, "lon": 72.8650, "tags": { "name": "CSMIA T1 Domestic Airport", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2014, "lat": 19.0960, "lon": 72.8740, "tags": { "name": "CSMIA T2 International Airport", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2015, "lat": 19.1280, "lon": 72.8720, "tags": { "name": "MIDC Andheri", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2016, "lat": 19.1350, "lon": 72.8820, "tags": { "name": "SEEPZ", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2017, "lat": 19.1430, "lon": 72.8880, "tags": { "name": "Aarey JVLR", "station": "subway", "line": "Line 3 Aqua" } },
+    { "type": "node", "id": 2018, "lat": 19.1760, "lon": 72.8600, "tags": { "name": "Goregaon East (Line 7)", "station": "subway", "line": "Line 7" } },
+    { "type": "node", "id": 2019, "lat": 19.1170, "lon": 72.8560, "tags": { "name": "Gundavali (Line 7)", "station": "subway", "line": "Line 7" } },
+    
+    { "type": "node", "id": 2020, "lat": 18.9818, "lon": 72.8290, "tags": { "name": "Sant Gadge Maharaj Chowk (Jacob Circle Monorail)", "station": "monorail", "network": "Mumbai Monorail" } },
+    { "type": "node", "id": 2021, "lat": 18.9950, "lon": 72.8335, "tags": { "name": "Currey Road Monorail", "station": "monorail", "network": "Mumbai Monorail" } },
+    { "type": "node", "id": 2022, "lat": 19.0110, "lon": 72.8480, "tags": { "name": "Naigaon Monorail", "station": "monorail", "network": "Mumbai Monorail" } },
+    { "type": "node", "id": 2023, "lat": 19.0220, "lon": 72.8610, "tags": { "name": "Wadala Bridge Monorail Depot", "station": "monorail", "network": "Mumbai Monorail" } },
+    { "type": "node", "id": 2024, "lat": 19.0340, "lon": 72.8670, "tags": { "name": "GTB Nagar Monorail", "station": "monorail", "network": "Mumbai Monorail" } },
+    { "type": "node", "id": 2025, "lat": 19.0490, "lon": 72.8850, "tags": { "name": "Fertiliser Township Monorail", "station": "monorail", "network": "Mumbai Monorail" } },
+    { "type": "node", "id": 2026, "lat": 19.0620, "lon": 72.8990, "tags": { "name": "Chembur Monorail Interchange", "station": "monorail", "network": "Mumbai Monorail" } },
+
+    { "type": "node", "id": 2030, "lat": 18.9400, "lon": 72.8350, "tags": { "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)", "railway": "station", "network": "Central Railway" } },
+    { "type": "node", "id": 2031, "lat": 19.0180, "lon": 72.8430, "tags": { "name": "Dadar Junction (Western / Central)", "railway": "station", "network": "Western/Central" } },
+    { "type": "node", "id": 2032, "lat": 19.0550, "lon": 72.8400, "tags": { "name": "Bandra Terminus", "railway": "station", "network": "Western Railway" } },
+    { "type": "node", "id": 2033, "lat": 19.1190, "lon": 72.8460, "tags": { "name": "Andheri Railway Station", "railway": "station", "network": "Western Railway" } },
+    { "type": "node", "id": 2034, "lat": 19.2290, "lon": 72.8570, "tags": { "name": "Borivali Railway Station", "railway": "station", "network": "Western Railway" } },
+    { "type": "node", "id": 2040, "lat": 19.0680, "lon": 72.8680, "tags": { "name": "BKC Bus Station (BEST)", "amenity": "bus_station" } }
+  ]
+}

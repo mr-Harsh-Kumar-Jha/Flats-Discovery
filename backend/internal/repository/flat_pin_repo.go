@@ -68,7 +68,8 @@ func (r *FlatPinRepository) GetByID(ctx context.Context, id string) (*model.Flat
 		       rent, deposit_amount, bhk_config::text, property_type::text, furnishing::text,
 		       lease_duration::text, available_from::text, floor_number, total_floors,
 		       parking::text, water_supply::text, power_backup::text,
-		       status::text, expires_at, description, image_urls, created_at, updated_at
+		       status::text, expires_at, description, image_urls, created_at, updated_at,
+		       COALESCE(is_for_sale, false), sale_price, society_id, external_id
 		FROM flat_pins
 		WHERE id = $1
 	`, id).Scan(
@@ -78,6 +79,7 @@ func (r *FlatPinRepository) GetByID(ctx context.Context, id string) (*model.Flat
 		&pin.LeaseDuration, &pin.AvailableFrom, &pin.FloorNumber, &pin.TotalFloors,
 		&pin.Parking, &pin.WaterSupply, &pin.PowerBackup,
 		&pin.Status, &pin.ExpiresAt, &pin.Description, &pin.ImageURLs, &pin.CreatedAt, &pin.UpdatedAt,
+		&pin.IsForSale, &pin.SalePrice, &pin.SocietyID, &pin.ExternalID,
 	)
 	if err != nil {
 		return nil, fmt.Errorf("fetching flat pin %s: %w", id, err)
@@ -94,7 +96,8 @@ func (r *FlatPinRepository) ListInBBox(ctx context.Context, cityID string, bbox 
 		       rent, deposit_amount, bhk_config::text, property_type::text, furnishing::text,
 		       lease_duration::text, available_from::text, floor_number, total_floors,
 		       parking::text, water_supply::text, power_backup::text,
-		       status::text, expires_at, description, created_at
+		       status::text, expires_at, description, created_at,
+		       COALESCE(is_for_sale, false), sale_price, society_id, external_id
 		FROM flat_pins
 		WHERE city_id = $1
 		  AND status IN ('ACTIVE', 'RENEWED')
@@ -117,6 +120,7 @@ func (r *FlatPinRepository) ListInBBox(ctx context.Context, cityID string, bbox 
 			&pin.LeaseDuration, &pin.AvailableFrom, &pin.FloorNumber, &pin.TotalFloors,
 			&pin.Parking, &pin.WaterSupply, &pin.PowerBackup,
 			&pin.Status, &pin.ExpiresAt, &pin.Description, &pin.CreatedAt,
+			&pin.IsForSale, &pin.SalePrice, &pin.SocietyID, &pin.ExternalID,
 		); err != nil {
 			return nil, fmt.Errorf("scanning flat pin row: %w", err)
 		}
@@ -133,7 +137,8 @@ func (r *FlatPinRepository) ListInPolygon(ctx context.Context, cityID string, ge
 		       rent, deposit_amount, bhk_config::text, property_type::text, furnishing::text,
 		       lease_duration::text, available_from::text, floor_number, total_floors,
 		       parking::text, water_supply::text, power_backup::text,
-		       status::text, expires_at, description, created_at
+		       status::text, expires_at, description, created_at,
+		       COALESCE(is_for_sale, false), sale_price, society_id, external_id
 		FROM flat_pins
 		WHERE city_id = $1
 		  AND status IN ('ACTIVE', 'RENEWED')
@@ -156,6 +161,47 @@ func (r *FlatPinRepository) ListInPolygon(ctx context.Context, cityID string, ge
 			&pin.LeaseDuration, &pin.AvailableFrom, &pin.FloorNumber, &pin.TotalFloors,
 			&pin.Parking, &pin.WaterSupply, &pin.PowerBackup,
 			&pin.Status, &pin.ExpiresAt, &pin.Description, &pin.CreatedAt,
+			&pin.IsForSale, &pin.SalePrice, &pin.SocietyID, &pin.ExternalID,
+		); err != nil {
+			return nil, fmt.Errorf("scanning flat pin row: %w", err)
+		}
+		pins = append(pins, pin)
+	}
+	return pins, rows.Err()
+}
+
+// ListByCity returns all active flat pins for a city ordered by most recent.
+func (r *FlatPinRepository) ListByCity(ctx context.Context, cityID string, p model.PaginationParams) ([]model.FlatPin, error) {
+	rows, err := r.pool.Query(ctx, `
+		SELECT id, city_id,
+		       ST_Y(location::geometry) AS lat, ST_X(location::geometry) AS lng,
+		       rent, deposit_amount, bhk_config::text, property_type::text, furnishing::text,
+		       lease_duration::text, available_from::text, floor_number, total_floors,
+		       parking::text, water_supply::text, power_backup::text,
+		       status::text, expires_at, description, created_at,
+		       COALESCE(is_for_sale, false), sale_price, society_id, external_id
+		FROM flat_pins
+		WHERE city_id = $1
+		  AND status IN ('ACTIVE', 'RENEWED')
+		ORDER BY created_at DESC
+		LIMIT $2 OFFSET $3
+	`, cityID, p.Limit, p.Offset)
+	if err != nil {
+		return nil, fmt.Errorf("listing flat pins by city: %w", err)
+	}
+	defer rows.Close()
+
+	var pins []model.FlatPin
+	for rows.Next() {
+		var pin model.FlatPin
+		if err := rows.Scan(
+			&pin.ID, &pin.CityID,
+			&pin.Lat, &pin.Lng,
+			&pin.Rent, &pin.DepositAmount, &pin.BHKConfig, &pin.PropertyType, &pin.Furnishing,
+			&pin.LeaseDuration, &pin.AvailableFrom, &pin.FloorNumber, &pin.TotalFloors,
+			&pin.Parking, &pin.WaterSupply, &pin.PowerBackup,
+			&pin.Status, &pin.ExpiresAt, &pin.Description, &pin.CreatedAt,
+			&pin.IsForSale, &pin.SalePrice, &pin.SocietyID, &pin.ExternalID,
 		); err != nil {
 			return nil, fmt.Errorf("scanning flat pin row: %w", err)
 		}

@@ -10,7 +10,7 @@ export default function Legend() {
   if (pinMode) return null;
 
   return (
-    <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 max-w-[95vw] overflow-x-auto scrollbar-none">
+    <div className="hidden md:block absolute bottom-12 left-1/2 -translate-x-1/2 z-10 max-w-[95vw] overflow-x-auto scrollbar-none">
       <div className="legend-pill flex items-center gap-2 whitespace-nowrap text-[11px] px-3.5 py-1.5">
         {/* Flat dot */}
         <span className="flex items-center gap-1.5">

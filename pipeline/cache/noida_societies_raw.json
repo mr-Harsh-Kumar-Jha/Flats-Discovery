@@ -1,0 +1,132 @@
+[
+  {
+    "type": "way",
+    "id": 801,
+    "center": {
+      "lat": 28.552,
+      "lon": 77.332
+    },
+    "tags": {
+      "name": "ATS Knightsbridge",
+      "residential": "gated",
+      "locality": "Sector 124 Expressway"
+    }
+  },
+  {
+    "type": "way",
+    "id": 802,
+    "center": {
+      "lat": 28.568,
+      "lon": 77.385
+    },
+    "tags": {
+      "name": "Mahagun Moderne",
+      "building": "apartments",
+      "locality": "Sector 78"
+    }
+  },
+  {
+    "type": "way",
+    "id": 803,
+    "center": {
+      "lat": 28.545,
+      "lon": 77.331
+    },
+    "tags": {
+      "name": "Supertech Supernova",
+      "building": "apartments",
+      "locality": "Sector 94"
+    }
+  },
+  {
+    "type": "way",
+    "id": 804,
+    "center": {
+      "lat": 28.5135,
+      "lon": 77.3758
+    },
+    "tags": {
+      "name": "Jaypee Greens Wish Town",
+      "landuse": "residential",
+      "locality": "Sector 128"
+    }
+  },
+  {
+    "type": "way",
+    "id": 805,
+    "center": {
+      "lat": 28.538,
+      "lon": 77.368
+    },
+    "tags": {
+      "name": "Prateek Edifice",
+      "residential": "gated",
+      "locality": "Sector 107"
+    }
+  },
+  {
+    "type": "way",
+    "id": 806,
+    "center": {
+      "lat": 28.4975,
+      "lon": 77.4172
+    },
+    "tags": {
+      "name": "Gulshan Dynasty",
+      "residential": "gated",
+      "locality": "Sector 144"
+    }
+  },
+  {
+    "type": "way",
+    "id": 807,
+    "center": {
+      "lat": 28.472,
+      "lon": 77.482
+    },
+    "tags": {
+      "name": "ACE Parkway",
+      "building": "apartments",
+      "locality": "Sector 150 Sports City"
+    }
+  },
+  {
+    "type": "way",
+    "id": 808,
+    "center": {
+      "lat": 28.468,
+      "lon": 77.478
+    },
+    "tags": {
+      "name": "Godrej Palm Retreat",
+      "residential": "gated",
+      "locality": "Sector 150"
+    }
+  },
+  {
+    "type": "way",
+    "id": 809,
+    "center": {
+      "lat": 28.512,
+      "lon": 77.389
+    },
+    "tags": {
+      "name": "Eldeco Utopia",
+      "residential": "gated",
+      "locality": "Sector 93A"
+    }
+  },
+  {
+    "type": "way",
+    "id": 810,
+    "center": {
+      "lat": 28.595,
+      "lon": 77.382
+    },
+    "tags": {
+      "name": "Cleo County",
+      "residential": "gated",
+      "locality": "Sector 121"
+    }
+  }
+]

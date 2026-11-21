@@ -1,0 +1,186 @@
+[
+  {
+    "name": "Amanora Park Town",
+    "developer": "City Corporation Ltd",
+    "locality": "Hadapsar",
+    "lat": 18.5158,
+    "lng": 73.9272,
+    "rera_id": "P52100000182",
+    "source_url": "https://www.magicbricks.com/amanora-park-town-hadapsar-pune-pdpid-4d42353031303135",
+    "amenities": [
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "squash",
+      "power_backup",
+      "gated_security"
+    ],
+    "units": [
+      {
+        "bhk": "2BHK",
+        "carpet_sqft": 845,
+        "super_sqft": 1150,
+        "bedrooms": [
+          "11'0\"x12'6\"",
+          "11'6\"x13'0\""
+        ],
+        "sale_price": 8800000,
+        "rent": 28000,
+        "deposit": 84000,
+        "furnishing": "SEMI_FURNISHED"
+      },
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 1280,
+        "super_sqft": 1680,
+        "bedrooms": [
+          "12'0\"x14'0\"",
+          "11'6\"x13'0\"",
+          "13'0\"x15'6\""
+        ],
+        "sale_price": 14200000,
+        "rent": 42000,
+        "deposit": 126000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  },
+  {
+    "name": "Blue Ridge Paranjape",
+    "developer": "Paranjape Schemes",
+    "locality": "Hinjewadi",
+    "lat": 18.5839,
+    "lng": 73.7431,
+    "rera_id": "P52100000054",
+    "source_url": "https://www.magicbricks.com/blue-ridge-hinjewadi-pune-pdpid-4d42353031303136",
+    "amenities": [
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "tennis",
+      "power_backup",
+      "golf_course"
+    ],
+    "units": [
+      {
+        "bhk": "1BHK",
+        "carpet_sqft": 520,
+        "super_sqft": 710,
+        "bedrooms": [
+          "11'0\"x12'0\""
+        ],
+        "sale_price": 4500000,
+        "rent": 14500,
+        "deposit": 43500,
+        "furnishing": "SEMI_FURNISHED"
+      },
+      {
+        "bhk": "2BHK",
+        "carpet_sqft": 890,
+        "super_sqft": 1180,
+        "bedrooms": [
+          "11'6\"x13'0\"",
+          "12'0\"x13'6\""
+        ],
+        "sale_price": 8200000,
+        "rent": 27000,
+        "deposit": 81000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  },
+  {
+    "name": "Godrej Elements",
+    "developer": "Godrej Properties",
+    "locality": "Hinjewadi",
+    "lat": 18.5895,
+    "lng": 73.7482,
+    "rera_id": "P52100016626",
+    "source_url": "https://www.magicbricks.com/godrej-elements-hinjewadi-pune-pdpid-4d42353238353131",
+    "amenities": [
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "squash",
+      "power_backup",
+      "security"
+    ],
+    "units": [
+      {
+        "bhk": "2BHK",
+        "carpet_sqft": 810,
+        "super_sqft": 1090,
+        "bedrooms": [
+          "11'0\"x12'6\"",
+          "11'6\"x13'0\""
+        ],
+        "sale_price": 7900000,
+        "rent": 26000,
+        "deposit": 78000,
+        "furnishing": "SEMI_FURNISHED"
+      },
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 1150,
+        "super_sqft": 1520,
+        "bedrooms": [
+          "12'0\"x13'6\"",
+          "11'6\"x12'6\"",
+          "12'6\"x14'6\""
+        ],
+        "sale_price": 11800000,
+        "rent": 38000,
+        "deposit": 114000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  },
+  {
+    "name": "Kasturi The Balmoral Riverside",
+    "developer": "Kasturi Housing",
+    "locality": "Balewadi",
+    "lat": 18.5721,
+    "lng": 73.7712,
+    "rera_id": "P52100028816",
+    "source_url": "https://www.magicbricks.com/the-balmoral-riverside-balewadi-pune-pdpid-4d42353330313838",
+    "amenities": [
+      "gym",
+      "infinity_pool",
+      "clubhouse",
+      "squash",
+      "concierge",
+      "power_backup"
+    ],
+    "units": [
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 1420,
+        "super_sqft": 1890,
+        "bedrooms": [
+          "12'6\"x15'0\"",
+          "12'0\"x14'0\"",
+          "13'0\"x16'0\""
+        ],
+        "sale_price": 18500000,
+        "rent": 58000,
+        "deposit": 174000,
+        "furnishing": "FULLY_FURNISHED"
+      },
+      {
+        "bhk": "4BHK",
+        "carpet_sqft": 2150,
+        "super_sqft": 2860,
+        "bedrooms": [
+          "13'0\"x16'6\"",
+          "12'6\"x15'0\"",
+          "13'0\"x15'0\"",
+          "15'0\"x18'0\""
+        ],
+        "sale_price": 28500000,
+        "rent": 85000,
+        "deposit": 255000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  }
+]

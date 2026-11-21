@@ -1,0 +1,114 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rapid-metro",
+        "name": "Rapid Metro Gurugram",
+        "route_type": "metro",
+        "color": "#3b82f6",
+        "details": "Cyber City \u27f7 Sikanderpur \u27f7 Sector 55-56"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.0895,
+            28.495
+          ],
+          [
+            77.093,
+            28.491
+          ],
+          [
+            77.094,
+            28.483
+          ],
+          [
+            77.0865,
+            28.4795
+          ],
+          [
+            77.098,
+            28.468
+          ],
+          [
+            77.102,
+            28.454
+          ],
+          [
+            77.104,
+            28.441
+          ],
+          [
+            77.111,
+            28.428
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "yellow-line-gurgaon",
+        "name": "Delhi Metro Yellow Line (Gurugram Corridor)",
+        "route_type": "metro",
+        "color": "#eab308",
+        "details": "Guru Dronacharya \u27f7 Sikanderpur \u27f7 MG Road \u27f7 Millennium City Centre"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.101,
+            28.491
+          ],
+          [
+            77.0865,
+            28.4795
+          ],
+          [
+            77.078,
+            28.479
+          ],
+          [
+            77.072,
+            28.472
+          ],
+          [
+            77.0715,
+            28.4595
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gurgaon-rail",
+        "name": "Northern Railway Corridor (Gurgaon - Rewari)",
+        "route_type": "railway",
+        "color": "#dc2626",
+        "details": "Delhi Cantt \u27f7 Gurgaon Railway Station \u27f7 Garhi Harsaru"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.085,
+            28.53
+          ],
+          [
+            77.025,
+            28.472
+          ],
+          [
+            76.965,
+            28.442
+          ]
+        ]
+      }
+    }
+  ]
+}

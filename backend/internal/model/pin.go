@@ -15,6 +15,10 @@ type FlatPin struct {
 	Lng           float64    `json:"lng"`
 	Rent          float64    `json:"rent"`
 	DepositAmount *float64   `json:"deposit_amount,omitempty"`
+	SalePrice     *float64   `json:"sale_price,omitempty"`
+	IsForSale     bool       `json:"is_for_sale"`
+	SocietyID     *string    `json:"society_id,omitempty"`
+	ExternalID    *string    `json:"external_id,omitempty"`
 	BHKConfig     string     `json:"bhk_config"`
 	PropertyType  string     `json:"property_type"`
 	Furnishing    string     `json:"furnishing"`

@@ -104,7 +104,7 @@ type FeatureFlags struct {
 	EnablePremiumAlerts  bool    `envconfig:"ENABLE_PREMIUM_ALERTS" default:"true"`
 	EnableImageScrubbing bool    `envconfig:"ENABLE_IMAGE_SCRUBBING" default:"true"`
 	EnableHeatmap        bool    `envconfig:"ENABLE_HEATMAP" default:"true"`
-	MaxBBoxAreaKM2       float64 `envconfig:"MAX_BBOX_AREA_KM2" default:"25"`
+	MaxBBoxAreaKM2       float64 `envconfig:"MAX_BBOX_AREA_KM2" default:"2500"`
 	RateLimitMapPerMin   int     `envconfig:"RATE_LIMIT_MAP_QUERIES_PER_MIN" default:"60"`
 	RateLimitPinPerMin   int     `envconfig:"RATE_LIMIT_PIN_CREATE_PER_MIN" default:"10"`
 }

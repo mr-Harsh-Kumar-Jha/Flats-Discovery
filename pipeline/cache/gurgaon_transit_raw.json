@@ -1,0 +1,156 @@
+{
+  "elements": [
+    {
+      "type": "node",
+      "id": 3001,
+      "lat": 28.495,
+      "lon": 77.0895,
+      "tags": {
+        "name": "Cyber City (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3002,
+      "lat": 28.491,
+      "lon": 77.093,
+      "tags": {
+        "name": "Belvedere Towers (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3003,
+      "lat": 28.483,
+      "lon": 77.094,
+      "tags": {
+        "name": "DLF Phase 2 (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3004,
+      "lat": 28.4795,
+      "lon": 77.0865,
+      "tags": {
+        "name": "Sikanderpur (Interchange Yellow / Rapid)",
+        "station": "subway",
+        "line": "Interchange"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3005,
+      "lat": 28.479,
+      "lon": 77.078,
+      "tags": {
+        "name": "MG Road",
+        "station": "subway",
+        "line": "Yellow Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3006,
+      "lat": 28.472,
+      "lon": 77.072,
+      "tags": {
+        "name": "IFFCO Chowk",
+        "station": "subway",
+        "line": "Yellow Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3007,
+      "lat": 28.4595,
+      "lon": 77.0715,
+      "tags": {
+        "name": "Millennium City Centre Gurugram (HUDA City Centre)",
+        "station": "subway",
+        "line": "Yellow Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3008,
+      "lat": 28.468,
+      "lon": 77.098,
+      "tags": {
+        "name": "Sector 42-43 (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3009,
+      "lat": 28.454,
+      "lon": 77.102,
+      "tags": {
+        "name": "Sector 53-54 (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3010,
+      "lat": 28.441,
+      "lon": 77.104,
+      "tags": {
+        "name": "Sector 54 Chowk (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3011,
+      "lat": 28.428,
+      "lon": 77.111,
+      "tags": {
+        "name": "Sector 55-56 (Rapid Metro)",
+        "station": "subway",
+        "line": "Rapid Metro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3020,
+      "lat": 28.468,
+      "lon": 77.018,
+      "tags": {
+        "name": "Gurgaon Railway Station",
+        "railway": "station",
+        "network": "Northern Railway"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3030,
+      "lat": 28.471,
+      "lon": 77.071,
+      "tags": {
+        "name": "IFFCO Chowk Bus Junction (GMCBL)",
+        "amenity": "bus_station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3031,
+      "lat": 28.448,
+      "lon": 77.04,
+      "tags": {
+        "name": "Rajiv Chowk Gurugram Bus Stand",
+        "amenity": "bus_station"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "delhi-meerut-rrts",
+        "name": "Namo Bharat Rapid Rail (RRTS High-Speed Corridor)",
+        "route_type": "rapid_rail",
+        "color": "#f97316",
+        "details": "Anand Vihar \u27f7 Sahibabad \u27f7 Ghaziabad \u27f7 Meerut (160 km/h Rapid Transit)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.315,
+            28.647
+          ],
+          [
+            77.358,
+            28.672
+          ],
+          [
+            77.432,
+            28.669
+          ],
+          [
+            77.485,
+            28.712
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "noida-blue-line",
+        "name": "Delhi Metro Blue Line (Noida Corridor)",
+        "route_type": "metro",
+        "color": "#3b82f6",
+        "details": "Sector 15 \u27f7 Botanical Garden \u27f7 Sector 62 \u27f7 Electronic City"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.311,
+            28.583
+          ],
+          [
+            77.318,
+            28.578
+          ],
+          [
+            77.3261,
+            28.5708
+          ],
+          [
+            77.334,
+            28.564
+          ],
+          [
+            77.356,
+            28.574
+          ],
+          [
+            77.368,
+            28.591
+          ],
+          [
+            77.371,
+            28.618
+          ],
+          [
+            77.3725,
+            28.6271
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nmrc-aqua-line",
+        "name": "NMRC Aqua Line (Noida - Greater Noida)",
+        "route_type": "metro",
+        "color": "#06b6d4",
+        "details": "Sector 51 \u27f7 Sector 137 \u27f7 Sector 142 \u27f7 Pari Chowk"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.372,
+            28.59
+          ],
+          [
+            77.374,
+            28.575
+          ],
+          [
+            77.382,
+            28.565
+          ],
+          [
+            77.3758,
+            28.5135
+          ],
+          [
+            77.4172,
+            28.4975
+          ],
+          [
+            77.502,
+            28.468
+          ]
+        ]
+      }
+    }
+  ]
+}

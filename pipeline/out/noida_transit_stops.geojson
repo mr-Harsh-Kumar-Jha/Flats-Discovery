@@ -1,0 +1,328 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.311,
+          28.583
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 15",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.318,
+          28.578
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 16",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3261,
+          28.5708
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 18 (Atta Market / Mall of India)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.334,
+          28.564
+        ]
+      },
+      "properties": {
+        "name": "Botanical Garden (Interchange Blue / Magenta)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Interchange",
+        "osm_id": 4004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.346,
+          28.568
+        ]
+      },
+      "properties": {
+        "name": "Golf Course",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.356,
+          28.574
+        ]
+      },
+      "properties": {
+        "name": "Noida City Centre",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.368,
+          28.591
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 52 (Interchange Aqua Line)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4007
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.371,
+          28.618
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 62",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4008
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3725,
+          28.6271
+        ]
+      },
+      "properties": {
+        "name": "Noida Electronic City",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Blue Line",
+        "osm_id": 4009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.372,
+          28.59
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 51 (NMRC Aqua)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 4010
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.374,
+          28.575
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 50 (NMRC)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 4011
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.382,
+          28.565
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 76 (NMRC)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 4012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3758,
+          28.5135
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 137 (NMRC Express Corridor)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 4013
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4172,
+          28.4975
+        ]
+      },
+      "properties": {
+        "name": "Noida Sector 142 (Advant Navis NMRC)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 4014
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.502,
+          28.468
+        ]
+      },
+      "properties": {
+        "name": "Pari Chowk Greater Noida (NMRC)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 4015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.315,
+          28.647
+        ]
+      },
+      "properties": {
+        "name": "Anand Vihar RRTS (Namo Bharat Interchange)",
+        "name_local": null,
+        "stop_type": "rapid_rail_station",
+        "route_info": "Namo Bharat RRTS",
+        "osm_id": 4020
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.358,
+          28.672
+        ]
+      },
+      "properties": {
+        "name": "Sahibabad RRTS Station",
+        "name_local": null,
+        "stop_type": "rapid_rail_station",
+        "route_info": "Namo Bharat RRTS",
+        "osm_id": 4021
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.432,
+          28.669
+        ]
+      },
+      "properties": {
+        "name": "Ghaziabad RRTS Station",
+        "name_local": null,
+        "stop_type": "rapid_rail_station",
+        "route_info": "Namo Bharat RRTS",
+        "osm_id": 4022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.336,
+          28.567
+        ]
+      },
+      "properties": {
+        "name": "Sector 37 Inter-State Bus Stand",
+        "name_local": null,
+        "stop_type": "bus_station",
+        "route_info": "City Bus Corridor",
+        "osm_id": 4030
+      }
+    }
+  ]
+}

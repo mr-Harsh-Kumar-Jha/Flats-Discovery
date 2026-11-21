@@ -1,0 +1,132 @@
+[
+  {
+    "type": "way",
+    "id": 701,
+    "center": {
+      "lat": 28.4732,
+      "lon": 77.0987
+    },
+    "tags": {
+      "name": "DLF The Aralias",
+      "residential": "gated",
+      "locality": "Golf Course Road"
+    }
+  },
+  {
+    "type": "way",
+    "id": 702,
+    "center": {
+      "lat": 28.476,
+      "lon": 77.102
+    },
+    "tags": {
+      "name": "DLF The Camellias",
+      "residential": "gated",
+      "locality": "Golf Course Road"
+    }
+  },
+  {
+    "type": "way",
+    "id": 703,
+    "center": {
+      "lat": 28.481,
+      "lon": 77.095
+    },
+    "tags": {
+      "name": "DLF The Crest",
+      "building": "apartments",
+      "locality": "DLF Phase 5"
+    }
+  },
+  {
+    "type": "way",
+    "id": 704,
+    "center": {
+      "lat": 28.4111,
+      "lon": 77.0712
+    },
+    "tags": {
+      "name": "M3M Golfestate",
+      "residential": "gated",
+      "locality": "Golf Course Ext Road"
+    }
+  },
+  {
+    "type": "way",
+    "id": 705,
+    "center": {
+      "lat": 28.4239,
+      "lon": 77.0392
+    },
+    "tags": {
+      "name": "Central Park Resorts",
+      "landuse": "residential",
+      "locality": "Sohna Road"
+    }
+  },
+  {
+    "type": "way",
+    "id": 706,
+    "center": {
+      "lat": 28.405,
+      "lon": 77.062
+    },
+    "tags": {
+      "name": "Tata Primanti",
+      "residential": "gated",
+      "locality": "Sector 72 SPR"
+    }
+  },
+  {
+    "type": "way",
+    "id": 707,
+    "center": {
+      "lat": 28.435,
+      "lon": 77.085
+    },
+    "tags": {
+      "name": "Ireo Grand Arch",
+      "building": "apartments",
+      "locality": "Sector 58"
+    }
+  },
+  {
+    "type": "way",
+    "id": 708,
+    "center": {
+      "lat": 28.515,
+      "lon": 77.012
+    },
+    "tags": {
+      "name": "Sobha City",
+      "residential": "gated",
+      "locality": "Sector 108 Dwarka Exp"
+    }
+  },
+  {
+    "type": "way",
+    "id": 709,
+    "center": {
+      "lat": 28.498,
+      "lon": 77.025
+    },
+    "tags": {
+      "name": "Godrej Meridien",
+      "building": "apartments",
+      "locality": "Sector 106"
+    }
+  },
+  {
+    "type": "way",
+    "id": 710,
+    "center": {
+      "lat": 28.455,
+      "lon": 77.099
+    },
+    "tags": {
+      "name": "Vipul Belmonte",
+      "residential": "gated",
+      "locality": "Golf Course Road"
+    }
+  }
+]

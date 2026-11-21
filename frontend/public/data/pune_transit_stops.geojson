@@ -1,0 +1,702 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8033,
+          18.6293
+        ]
+      },
+      "properties": {
+        "name": "PCMC",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8157,
+          18.6145
+        ]
+      },
+      "properties": {
+        "name": "Sant Tukaram Nagar",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8201,
+          18.6093
+        ]
+      },
+      "properties": {
+        "name": "Bhosari (Nashik Phata)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8273,
+          18.5996
+        ]
+      },
+      "properties": {
+        "name": "Kasarwadi",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8311,
+          18.5911
+        ]
+      },
+      "properties": {
+        "name": "Phugewadi",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8338,
+          18.5838
+        ]
+      },
+      "properties": {
+        "name": "Dapodi",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8381,
+          18.5697
+        ]
+      },
+      "properties": {
+        "name": "Bopodi",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1007
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8421,
+          18.5623
+        ]
+      },
+      "properties": {
+        "name": "Khadki",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1008
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8458,
+          18.5503
+        ]
+      },
+      "properties": {
+        "name": "Range Hills",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8497,
+          18.5322
+        ]
+      },
+      "properties": {
+        "name": "Shivajinagar Metro",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1010
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8569,
+          18.5268
+        ]
+      },
+      "properties": {
+        "name": "District Court (Interchange)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Interchange",
+        "osm_id": 1011
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8596,
+          18.5214
+        ]
+      },
+      "properties": {
+        "name": "Budhwar Peth",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8586,
+          18.512
+        ]
+      },
+      "properties": {
+        "name": "Mandai",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1013
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8575,
+          18.4997
+        ]
+      },
+      "properties": {
+        "name": "Swargate",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Purple Line",
+        "osm_id": 1014
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8052,
+          18.5072
+        ]
+      },
+      "properties": {
+        "name": "Vanaz",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8141,
+          18.5096
+        ]
+      },
+      "properties": {
+        "name": "Anand Nagar",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8221,
+          18.5089
+        ]
+      },
+      "properties": {
+        "name": "Ideal Colony",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1017
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8288,
+          18.5074
+        ]
+      },
+      "properties": {
+        "name": "Nal Stop",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1018
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8381,
+          18.512
+        ]
+      },
+      "properties": {
+        "name": "Garware College",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1019
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8444,
+          18.5164
+        ]
+      },
+      "properties": {
+        "name": "Deccan Gymkhana",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1020
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8474,
+          18.5201
+        ]
+      },
+      "properties": {
+        "name": "Chhatrapati Sambhaji Udyan",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1021
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8533,
+          18.5227
+        ]
+      },
+      "properties": {
+        "name": "PMC",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8645,
+          18.5272
+        ]
+      },
+      "properties": {
+        "name": "Mangalwar Peth",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1023
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8744,
+          18.5289
+        ]
+      },
+      "properties": {
+        "name": "Pune Railway Station Metro",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1024
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8777,
+          18.5327
+        ]
+      },
+      "properties": {
+        "name": "Ruby Hall Clinic",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1025
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8834,
+          18.5406
+        ]
+      },
+      "properties": {
+        "name": "Bund Garden",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1026
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8867,
+          18.5453
+        ]
+      },
+      "properties": {
+        "name": "Kalyani Nagar",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1027
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9086,
+          18.557
+        ]
+      },
+      "properties": {
+        "name": "Ramwadi",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Aqua Line",
+        "osm_id": 1028
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7389,
+          18.5913
+        ]
+      },
+      "properties": {
+        "name": "Megapolis Circle (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3",
+        "osm_id": 1029
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.748,
+          18.595
+        ]
+      },
+      "properties": {
+        "name": "Infosys Phase 2 (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3",
+        "osm_id": 1030
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.762,
+          18.592
+        ]
+      },
+      "properties": {
+        "name": "Wipro Phase 1 (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3",
+        "osm_id": 1031
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.768,
+          18.58
+        ]
+      },
+      "properties": {
+        "name": "Wakad Chowk (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3",
+        "osm_id": 1032
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.778,
+          18.567
+        ]
+      },
+      "properties": {
+        "name": "Balewadi Stadium (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3",
+        "osm_id": 1033
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.792,
+          18.558
+        ]
+      },
+      "properties": {
+        "name": "Baner (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3",
+        "osm_id": 1034
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8742,
+          18.5284
+        ]
+      },
+      "properties": {
+        "name": "Pune Junction Railway Station",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Central Railway",
+        "osm_id": 1050
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.848,
+          18.531
+        ]
+      },
+      "properties": {
+        "name": "Shivajinagar Railway Station",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Central Railway",
+        "osm_id": 1051
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.841,
+          18.562
+        ]
+      },
+      "properties": {
+        "name": "Khadki Railway Station",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Central Railway",
+        "osm_id": 1052
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.931,
+          18.503
+        ]
+      },
+      "properties": {
+        "name": "Hadapsar Railway Station",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Central Railway",
+        "osm_id": 1053
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.858,
+          18.502
+        ]
+      },
+      "properties": {
+        "name": "Swargate Bus Terminal (MSRTC/PMPML)",
+        "name_local": null,
+        "stop_type": "bus_station",
+        "route_info": "City Bus Corridor",
+        "osm_id": 1060
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.848,
+          18.532
+        ]
+      },
+      "properties": {
+        "name": "Shivajinagar Bus Stand",
+        "name_local": null,
+        "stop_type": "bus_station",
+        "route_info": "City Bus Corridor",
+        "osm_id": 1061
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.738,
+          18.582
+        ]
+      },
+      "properties": {
+        "name": "Hinjewadi Maan Bus Depot",
+        "name_local": null,
+        "stop_type": "bus_station",
+        "route_info": "City Bus Corridor",
+        "osm_id": 1062
+      }
+    }
+  ]
+}

@@ -121,15 +121,26 @@ func (h *PinHandler) ListFlatPins(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	bbox, apiErr := ParseBBox(r)
-	if apiErr != nil {
-		ErrorFromModel(w, apiErr)
-		return
-	}
-
 	pagination := ParsePagination(r)
 
-	pins, err := h.flatRepo.ListInBBox(r.Context(), cityID, *bbox, pagination)
+	var pins []model.FlatPin
+	var bboxSlice []float64
+
+	// If bounding box params are present, query within viewport; otherwise return city-wide listings
+	if r.URL.Query().Get("sw_lng") != "" {
+		bbox, apiErr := ParseBBox(r)
+		if apiErr != nil {
+			ErrorFromModel(w, apiErr)
+			return
+		}
+		pins, err = h.flatRepo.ListInBBox(r.Context(), cityID, *bbox, pagination)
+		if bbox != nil {
+			bboxSlice = bbox.ToSlice()
+		}
+	} else {
+		pins, err = h.flatRepo.ListByCity(r.Context(), cityID, pagination)
+	}
+
 	if err != nil {
 		h.logger.Error("failed to list flat pins", zap.Error(err))
 		Error(w, 500, "failed to list flat pins", "")
@@ -144,7 +155,7 @@ func (h *PinHandler) ListFlatPins(w http.ResponseWriter, r *http.Request) {
 		Count:  len(pins),
 		Limit:  pagination.Limit,
 		Offset: pagination.Offset,
-		BBox:   bbox.ToSlice(),
+		BBox:   bboxSlice,
 	})
 }
 

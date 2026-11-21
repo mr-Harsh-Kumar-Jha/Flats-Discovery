@@ -1,0 +1,84 @@
+[
+  {
+    "name": "DLF The Aralias",
+    "developer": "DLF Limited",
+    "locality": "Golf Course Road",
+    "lat": 28.4726,
+    "lng": 77.0989,
+    "rera_id": "HRERA-GGM-01-2017",
+    "source_url": "https://www.magicbricks.com/the-aralias-golf-course-road-gurgaon-pdpid-4d42353031303139",
+    "amenities": [
+      "golf_course_facing",
+      "gym",
+      "olympic_pool",
+      "clubhouse",
+      "squash",
+      "cigar_lounge"
+    ],
+    "units": [
+      {
+        "bhk": "4BHK",
+        "carpet_sqft": 4200,
+        "super_sqft": 5820,
+        "bedrooms": [
+          "14'0\"x18'0\"",
+          "13'6\"x16'0\"",
+          "13'6\"x16'0\"",
+          "16'0\"x20'0\""
+        ],
+        "sale_price": 145000000,
+        "rent": 350000,
+        "deposit": 1050000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  },
+  {
+    "name": "Pioneer Araya",
+    "developer": "Pioneer Urban",
+    "locality": "Sector 62",
+    "lat": 28.4111,
+    "lng": 77.0712,
+    "rera_id": "HRERA-GGM-88-2018",
+    "source_url": "https://www.magicbricks.com/pioneer-araya-sector-62-gurgaon-pdpid-4d42353031303230",
+    "amenities": [
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "squash",
+      "billiards",
+      "power_backup"
+    ],
+    "units": [
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 2450,
+        "super_sqft": 3498,
+        "bedrooms": [
+          "12'2\"x14'11\"",
+          "12'2\"x14'11\"",
+          "16'0\"x19'5\""
+        ],
+        "sale_price": 52000000,
+        "rent": 135000,
+        "deposit": 405000,
+        "furnishing": "SEMI_FURNISHED"
+      },
+      {
+        "bhk": "4BHK",
+        "carpet_sqft": 3100,
+        "super_sqft": 4279,
+        "bedrooms": [
+          "12'10\"x16'4\"",
+          "12'2\"x14'11\"",
+          "12'2\"x14'11\"",
+          "16'0\"x19'5\""
+        ],
+        "sale_price": 68000000,
+        "rent": 175000,
+        "deposit": 525000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  }
+]

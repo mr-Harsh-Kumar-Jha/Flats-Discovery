@@ -1,0 +1,365 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.332,
+          28.552
+        ]
+      },
+      "properties": {
+        "id": "ats-knightsbridge-noida",
+        "name": "ATS Knightsbridge",
+        "slug": "ats-knightsbridge-noida",
+        "locality": "Sector 124 Expressway",
+        "min_rent": 24500.0,
+        "max_rent": 54500.0,
+        "min_price": 7803300.0,
+        "max_price": 17249400.0,
+        "avg_price_per_sqft": 8214,
+        "rental_yield_pct": 3.8,
+        "price_to_rent_ratio": 26.5,
+        "nearest_metro_station": "Botanical Garden (Interchange Blue / Magenta)",
+        "metro_distance_meters": 1349,
+        "metro_line": "Interchange",
+        "office_commute": {
+          "sector_62": 41,
+          "sector_18": 15,
+          "expressway_tech": 29,
+          "advant_navis": 46,
+          "greater_noida_kp": 68
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "UPRERAPRJ1395401",
+        "rating": 4.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.385,
+          28.568
+        ]
+      },
+      "properties": {
+        "id": "mahagun-moderne-noida",
+        "name": "Mahagun Moderne",
+        "slug": "mahagun-moderne-noida",
+        "locality": "Sector 78",
+        "min_rent": 28500.0,
+        "max_rent": 68000.0,
+        "min_price": 8780100.0,
+        "max_price": 20905000.0,
+        "avg_price_per_sqft": 8362,
+        "rental_yield_pct": 3.9,
+        "price_to_rent_ratio": 25.7,
+        "nearest_metro_station": "Noida Sector 76 (NMRC)",
+        "metro_distance_meters": 444,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 31,
+          "sector_18": 27,
+          "expressway_tech": 29,
+          "advant_navis": 38,
+          "greater_noida_kp": 57
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "UPRERAPRJ1429221",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.331,
+          28.545
+        ]
+      },
+      "properties": {
+        "id": "supertech-supernova-noida",
+        "name": "Supertech Supernova",
+        "slug": "supertech-supernova-noida",
+        "locality": "Sector 94",
+        "min_rent": 18500.0,
+        "max_rent": 41000.0,
+        "min_price": 6327000.0,
+        "max_price": 14060000.0,
+        "avg_price_per_sqft": 7030,
+        "rental_yield_pct": 3.5,
+        "price_to_rent_ratio": 28.5,
+        "nearest_metro_station": "Botanical Garden (Interchange Blue / Magenta)",
+        "metro_distance_meters": 2133,
+        "metro_line": "Interchange",
+        "office_commute": {
+          "sector_62": 44,
+          "sector_18": 19,
+          "expressway_tech": 27,
+          "advant_navis": 44,
+          "greater_noida_kp": 67
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "UPRERAPRJ1458975",
+        "rating": 4.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3758,
+          28.5135
+        ]
+      },
+      "properties": {
+        "id": "jaypee-greens-wish-town-noida",
+        "name": "Jaypee Greens Wish Town",
+        "slug": "jaypee-greens-wish-town-noida",
+        "locality": "Sector 128",
+        "min_rent": 19500.0,
+        "max_rent": 46000.0,
+        "min_price": 6837600.0,
+        "max_price": 16280000.0,
+        "avg_price_per_sqft": 6512,
+        "rental_yield_pct": 3.4,
+        "price_to_rent_ratio": 29.2,
+        "nearest_metro_station": "Noida Sector 137 (NMRC Express Corridor)",
+        "metro_distance_meters": 0,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 47,
+          "sector_18": 36,
+          "expressway_tech": 4,
+          "advant_navis": 22,
+          "greater_noida_kp": 48
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "UPRERAPRJ1268408",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.368,
+          28.538
+        ]
+      },
+      "properties": {
+        "id": "prateek-edifice-noida",
+        "name": "Prateek Edifice",
+        "slug": "prateek-edifice-noida",
+        "locality": "Sector 107",
+        "min_rent": 30000.0,
+        "max_rent": 60000.0,
+        "min_price": 8780100.0,
+        "max_price": 17560200.0,
+        "avg_price_per_sqft": 8362,
+        "rental_yield_pct": 4.1,
+        "price_to_rent_ratio": 24.4,
+        "nearest_metro_station": "Noida Sector 137 (NMRC Express Corridor)",
+        "metro_distance_meters": 2829,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 44,
+          "sector_18": 26,
+          "expressway_tech": 18,
+          "advant_navis": 31,
+          "greater_noida_kp": 55
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "UPRERAPRJ1072649",
+        "rating": 4.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4172,
+          28.4975
+        ]
+      },
+      "properties": {
+        "id": "gulshan-dynasty-noida",
+        "name": "Gulshan Dynasty",
+        "slug": "gulshan-dynasty-noida",
+        "locality": "Sector 144",
+        "min_rent": 20500.0,
+        "max_rent": 48000.0,
+        "min_price": 6045800.0,
+        "max_price": 14000800.0,
+        "avg_price_per_sqft": 6364,
+        "rental_yield_pct": 4.1,
+        "price_to_rent_ratio": 24.6,
+        "nearest_metro_station": "Noida Sector 142 (Advant Navis NMRC)",
+        "metro_distance_meters": 0,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 55,
+          "sector_18": 45,
+          "expressway_tech": 22,
+          "advant_navis": 4,
+          "greater_noida_kp": 39
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "UPRERAPRJ1397380",
+        "rating": 4.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.482,
+          28.472
+        ]
+      },
+      "properties": {
+        "id": "ace-parkway-noida",
+        "name": "ACE Parkway",
+        "slug": "ace-parkway-noida",
+        "locality": "Sector 150 Sports City",
+        "min_rent": 20500.0,
+        "max_rent": 50500.0,
+        "min_price": 6327000.0,
+        "max_price": 15466000.0,
+        "avg_price_per_sqft": 7030,
+        "rental_yield_pct": 3.9,
+        "price_to_rent_ratio": 25.7,
+        "nearest_metro_station": "Pari Chowk Greater Noida (NMRC)",
+        "metro_distance_meters": 2005,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 72,
+          "sector_18": 67,
+          "expressway_tech": 42,
+          "advant_navis": 32,
+          "greater_noida_kp": 14
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "UPRERAPRJ1628221",
+        "rating": 4.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.478,
+          28.468
+        ]
+      },
+      "properties": {
+        "id": "godrej-palm-retreat-noida",
+        "name": "Godrej Palm Retreat",
+        "slug": "godrej-palm-retreat-noida",
+        "locality": "Sector 150",
+        "min_rent": 31000.0,
+        "max_rent": 62000.0,
+        "min_price": 9279600.0,
+        "max_price": 18559200.0,
+        "avg_price_per_sqft": 8436,
+        "rental_yield_pct": 4.0,
+        "price_to_rent_ratio": 24.9,
+        "nearest_metro_station": "Pari Chowk Greater Noida (NMRC)",
+        "metro_distance_meters": 2346,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 73,
+          "sector_18": 67,
+          "expressway_tech": 42,
+          "advant_navis": 31,
+          "greater_noida_kp": 16
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "UPRERAPRJ1303817",
+        "rating": 4.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.389,
+          28.512
+        ]
+      },
+      "properties": {
+        "id": "eldeco-utopia-noida",
+        "name": "Eldeco Utopia",
+        "slug": "eldeco-utopia-noida",
+        "locality": "Sector 93A",
+        "min_rent": 23000.0,
+        "max_rent": 50000.0,
+        "min_price": 6837600.0,
+        "max_price": 14977600.0,
+        "avg_price_per_sqft": 6512,
+        "rental_yield_pct": 4.0,
+        "price_to_rent_ratio": 24.8,
+        "nearest_metro_station": "Noida Sector 137 (NMRC Express Corridor)",
+        "metro_distance_meters": 1300,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 48,
+          "sector_18": 40,
+          "expressway_tech": 11,
+          "advant_navis": 17,
+          "greater_noida_kp": 44
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "UPRERAPRJ1890746",
+        "rating": 4.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.382,
+          28.595
+        ]
+      },
+      "properties": {
+        "id": "cleo-county-noida",
+        "name": "Cleo County",
+        "slug": "cleo-county-noida",
+        "locality": "Sector 121",
+        "min_rent": 17000.0,
+        "max_rent": 43500.0,
+        "min_price": 6045800.0,
+        "max_price": 15273600.0,
+        "avg_price_per_sqft": 6364,
+        "rental_yield_pct": 3.4,
+        "price_to_rent_ratio": 29.6,
+        "nearest_metro_station": "Noida Sector 51 (NMRC Aqua)",
+        "metro_distance_meters": 1124,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "sector_62": 19,
+          "sector_18": 29,
+          "expressway_tech": 41,
+          "advant_navis": 42,
+          "greater_noida_kp": 65
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "UPRERAPRJ1538690",
+        "rating": 4.8
+      }
+    }
+  ]
+}

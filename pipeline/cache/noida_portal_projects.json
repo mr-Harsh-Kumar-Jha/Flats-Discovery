@@ -1,0 +1,82 @@
+[
+  {
+    "name": "ATS Knightsbridge",
+    "developer": "ATS Infrastructure",
+    "locality": "Sector 124",
+    "lat": 28.5392,
+    "lng": 77.3402,
+    "rera_id": "UPRERAPRJ2825",
+    "source_url": "https://www.magicbricks.com/ats-knightsbridge-sector-124-noida-pdpid-4d42353031303231",
+    "amenities": [
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "squash",
+      "helipad",
+      "power_backup"
+    ],
+    "units": [
+      {
+        "bhk": "4BHK",
+        "carpet_sqft": 3800,
+        "super_sqft": 6000,
+        "bedrooms": [
+          "14'0\"x18'0\"",
+          "13'0\"x16'6\"",
+          "13'6\"x16'0\"",
+          "16'0\"x21'0\""
+        ],
+        "sale_price": 95000000,
+        "rent": 220000,
+        "deposit": 660000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  },
+  {
+    "name": "Jaypee Greens Wish Town",
+    "developer": "Jaypee Group",
+    "locality": "Sector 128",
+    "lat": 28.5134,
+    "lng": 77.3769,
+    "rera_id": "UPRERAPRJ1184",
+    "source_url": "https://www.magicbricks.com/jaypee-greens-wish-town-sector-128-noida-pdpid-4d42353031303232",
+    "amenities": [
+      "golf_course",
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "tennis",
+      "security"
+    ],
+    "units": [
+      {
+        "bhk": "2BHK",
+        "carpet_sqft": 870,
+        "super_sqft": 1150,
+        "bedrooms": [
+          "11'0\"x12'6\"",
+          "11'6\"x13'6\""
+        ],
+        "sale_price": 7200000,
+        "rent": 24000,
+        "deposit": 72000,
+        "furnishing": "SEMI_FURNISHED"
+      },
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 1320,
+        "super_sqft": 1750,
+        "bedrooms": [
+          "12'0\"x14'0\"",
+          "11'6\"x13'0\"",
+          "13'0\"x15'0\""
+        ],
+        "sale_price": 10800000,
+        "rent": 34000,
+        "deposit": 102000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  }
+]

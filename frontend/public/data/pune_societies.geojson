@@ -1,0 +1,437 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9272,
+          18.5158
+        ]
+      },
+      "properties": {
+        "id": "amanora-park-town-pune",
+        "name": "Amanora Park Town",
+        "slug": "amanora-park-town-pune",
+        "locality": "Hadapsar",
+        "min_rent": 29000.0,
+        "max_rent": 52500.0,
+        "min_price": 9352200.0,
+        "max_price": 17004000.0,
+        "avg_price_per_sqft": 8502,
+        "rental_yield_pct": 3.7,
+        "price_to_rent_ratio": 26.9,
+        "nearest_metro_station": "Ramwadi",
+        "metro_distance_meters": 4983,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "hinjewadi": 77,
+          "magarpatta": 4,
+          "kharadi": 23,
+          "baner": 61,
+          "shivajinagar": 46
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "P5210001812224",
+        "rating": 4.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7389,
+          18.5913
+        ]
+      },
+      "properties": {
+        "id": "megapolis-mystic-pune",
+        "name": "Megapolis Mystic",
+        "slug": "megapolis-mystic-pune",
+        "locality": "Hinjewadi Phase 3",
+        "min_rent": 21000.0,
+        "max_rent": 44500.0,
+        "min_price": 7484100.0,
+        "max_price": 15756000.0,
+        "avg_price_per_sqft": 7878,
+        "rental_yield_pct": 3.4,
+        "price_to_rent_ratio": 29.7,
+        "nearest_metro_station": "Megapolis Circle (Line 3)",
+        "metro_distance_meters": 0,
+        "metro_line": "Line 3",
+        "office_commute": {
+          "hinjewadi": 4,
+          "magarpatta": 77,
+          "kharadi": 81,
+          "baner": 23,
+          "shivajinagar": 43
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "P5210001398521",
+        "rating": 4.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7431,
+          18.5824
+        ]
+      },
+      "properties": {
+        "id": "blue-ridge-paranjape-pune",
+        "name": "Blue Ridge Paranjape",
+        "slug": "blue-ridge-paranjape-pune",
+        "locality": "Hinjewadi Phase 1",
+        "min_rent": 20000.0,
+        "max_rent": 49500.0,
+        "min_price": 6786000.0,
+        "max_price": 16965000.0,
+        "avg_price_per_sqft": 6786,
+        "rental_yield_pct": 3.5,
+        "price_to_rent_ratio": 28.3,
+        "nearest_metro_station": "Megapolis Circle (Line 3)",
+        "metro_distance_meters": 1084,
+        "metro_line": "Line 3",
+        "office_commute": {
+          "hinjewadi": 9,
+          "magarpatta": 74,
+          "kharadi": 79,
+          "baner": 20,
+          "shivajinagar": 48
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5210001731365",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9482,
+          18.5284
+        ]
+      },
+      "properties": {
+        "id": "godrej-infinity-pune",
+        "name": "Godrej Infinity",
+        "slug": "godrej-infinity-pune",
+        "locality": "Keshavnagar Mundhwa",
+        "min_rent": 29500.0,
+        "max_rent": 51000.0,
+        "min_price": 9352200.0,
+        "max_price": 16153800.0,
+        "avg_price_per_sqft": 8502,
+        "rental_yield_pct": 3.8,
+        "price_to_rent_ratio": 26.4,
+        "nearest_metro_station": "Ramwadi",
+        "metro_distance_meters": 5248,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "hinjewadi": 82,
+          "magarpatta": 17,
+          "kharadi": 17,
+          "baner": 67,
+          "shivajinagar": 46
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "P5210001675790",
+        "rating": 4.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7198,
+          18.6142
+        ]
+      },
+      "properties": {
+        "id": "kolte-patil-life-republic-pune",
+        "name": "Kolte Patil Life Republic",
+        "slug": "kolte-patil-life-republic-pune",
+        "locality": "Hinjewadi Marunji",
+        "min_rent": 25000.0,
+        "max_rent": 45000.0,
+        "min_price": 8494200.0,
+        "max_price": 15444000.0,
+        "avg_price_per_sqft": 7722,
+        "rental_yield_pct": 3.5,
+        "price_to_rent_ratio": 28.3,
+        "nearest_metro_station": "Megapolis Circle (Line 3)",
+        "metro_distance_meters": 3246,
+        "metro_line": "Line 3",
+        "office_commute": {
+          "hinjewadi": 17,
+          "magarpatta": 86,
+          "kharadi": 90,
+          "baner": 36,
+          "shivajinagar": 54
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "P5210001443687",
+        "rating": 4.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8964,
+          18.5582
+        ]
+      },
+      "properties": {
+        "id": "rohan-mithila-pune",
+        "name": "Rohan Mithila",
+        "slug": "rohan-mithila-pune",
+        "locality": "Viman Nagar",
+        "min_rent": 21500.0,
+        "max_rent": 55000.0,
+        "min_price": 8073000.0,
+        "max_price": 20631000.0,
+        "avg_price_per_sqft": 8970,
+        "rental_yield_pct": 3.2,
+        "price_to_rent_ratio": 31.3,
+        "nearest_metro_station": "Ramwadi",
+        "metro_distance_meters": 1293,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "hinjewadi": 61,
+          "magarpatta": 27,
+          "kharadi": 28,
+          "baner": 47,
+          "shivajinagar": 35
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "P5210001824919",
+        "rating": 4.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7769,
+          18.5679
+        ]
+      },
+      "properties": {
+        "id": "kasturi-the-balmoral-estate-pune",
+        "name": "Kasturi The Balmoral Estate",
+        "slug": "kasturi-the-balmoral-estate-pune",
+        "locality": "Baner Balewadi",
+        "min_rent": 22500.0,
+        "max_rent": 52500.0,
+        "min_price": 7722000.0,
+        "max_price": 18018000.0,
+        "avg_price_per_sqft": 8580,
+        "rental_yield_pct": 3.5,
+        "price_to_rent_ratio": 28.6,
+        "nearest_metro_station": "Balewadi Stadium (Line 3)",
+        "metro_distance_meters": 153,
+        "metro_line": "Line 3",
+        "office_commute": {
+          "hinjewadi": 23,
+          "magarpatta": 61,
+          "kharadi": 66,
+          "baner": 4,
+          "shivajinagar": 32
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5210001865379",
+        "rating": 4.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9515,
+          18.5516
+        ]
+      },
+      "properties": {
+        "id": "panchshil-towers-pune",
+        "name": "Panchshil Towers",
+        "slug": "panchshil-towers-pune",
+        "locality": "Kharadi EON Corridor",
+        "min_rent": 24000.0,
+        "max_rent": 50500.0,
+        "min_price": 7636200.0,
+        "max_price": 15966600.0,
+        "avg_price_per_sqft": 6942,
+        "rental_yield_pct": 3.8,
+        "price_to_rent_ratio": 26.5,
+        "nearest_metro_station": "Ramwadi",
+        "metro_distance_meters": 4562,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "hinjewadi": 81,
+          "magarpatta": 23,
+          "kharadi": 4,
+          "baner": 66,
+          "shivajinagar": 48
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "P5210001415794",
+        "rating": 4.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8965,
+          18.4712
+        ]
+      },
+      "properties": {
+        "id": "kolte-patil-24k-glamore-pune",
+        "name": "Kolte Patil 24K Glamore",
+        "slug": "kolte-patil-24k-glamore-pune",
+        "locality": "NIBM Undri",
+        "min_rent": 26500.0,
+        "max_rent": 66000.0,
+        "min_price": 8346000.0,
+        "max_price": 20865000.0,
+        "avg_price_per_sqft": 8346,
+        "rental_yield_pct": 3.8,
+        "price_to_rent_ratio": 26.2,
+        "nearest_metro_station": "Swargate",
+        "metro_distance_meters": 5192,
+        "metro_line": "Purple Line",
+        "office_commute": {
+          "hinjewadi": 76,
+          "magarpatta": 28,
+          "kharadi": 47,
+          "baner": 60,
+          "shivajinagar": 43
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5210001701241",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.805,
+          18.502
+        ]
+      },
+      "properties": {
+        "id": "kumar-parisar-pune",
+        "name": "Kumar Parisar",
+        "slug": "kumar-parisar-pune",
+        "locality": "Kothrud",
+        "min_rent": 26500.0,
+        "max_rent": 61000.0,
+        "min_price": 8346000.0,
+        "max_price": 19195800.0,
+        "avg_price_per_sqft": 8346,
+        "rental_yield_pct": 3.8,
+        "price_to_rent_ratio": 26.2,
+        "nearest_metro_station": "Vanaz",
+        "metro_distance_meters": 579,
+        "metro_line": "Aqua Line",
+        "office_commute": {
+          "hinjewadi": 45,
+          "magarpatta": 48,
+          "kharadi": 59,
+          "baner": 36,
+          "shivajinagar": 21
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "P5210001776545",
+        "rating": 4.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.792,
+          18.568
+        ]
+      },
+      "properties": {
+        "id": "rohan-leher-pune",
+        "name": "Rohan Leher",
+        "slug": "rohan-leher-pune",
+        "locality": "Baner",
+        "min_rent": 25000.0,
+        "max_rent": 43000.0,
+        "min_price": 8845200.0,
+        "max_price": 15163200.0,
+        "avg_price_per_sqft": 8424,
+        "rental_yield_pct": 3.4,
+        "price_to_rent_ratio": 29.5,
+        "nearest_metro_station": "Baner (Line 3)",
+        "metro_distance_meters": 1112,
+        "metro_line": "Line 3",
+        "office_commute": {
+          "hinjewadi": 29,
+          "magarpatta": 56,
+          "kharadi": 61,
+          "baner": 12,
+          "shivajinagar": 27
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "P5210001587027",
+        "rating": 4.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.755,
+          18.628
+        ]
+      },
+      "properties": {
+        "id": "empire-estate-pune",
+        "name": "Empire Estate",
+        "slug": "empire-estate-pune",
+        "locality": "Chinchwad PCMC",
+        "min_rent": 26000.0,
+        "max_rent": 52500.0,
+        "min_price": 8073000.0,
+        "max_price": 16146000.0,
+        "avg_price_per_sqft": 8970,
+        "rental_yield_pct": 3.9,
+        "price_to_rent_ratio": 25.9,
+        "nearest_metro_station": "Infosys Phase 2 (Line 3)",
+        "metro_distance_meters": 3743,
+        "metro_line": "Line 3",
+        "office_commute": {
+          "hinjewadi": 22,
+          "magarpatta": 78,
+          "kharadi": 80,
+          "baner": 33,
+          "shivajinagar": 49
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "P5210001296109",
+        "rating": 4.2
+      }
+    }
+  ]
+}

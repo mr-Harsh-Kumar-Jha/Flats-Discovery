@@ -1,0 +1,158 @@
+[
+  {
+    "type": "way",
+    "id": 501,
+    "center": {
+      "lat": 18.5158,
+      "lon": 73.9272
+    },
+    "tags": {
+      "name": "Amanora Park Town",
+      "landuse": "residential",
+      "locality": "Hadapsar"
+    }
+  },
+  {
+    "type": "way",
+    "id": 502,
+    "center": {
+      "lat": 18.5913,
+      "lon": 73.7389
+    },
+    "tags": {
+      "name": "Megapolis Mystic",
+      "residential": "gated",
+      "locality": "Hinjewadi Phase 3"
+    }
+  },
+  {
+    "type": "way",
+    "id": 503,
+    "center": {
+      "lat": 18.5824,
+      "lon": 73.7431
+    },
+    "tags": {
+      "name": "Blue Ridge Paranjape",
+      "landuse": "residential",
+      "locality": "Hinjewadi Phase 1"
+    }
+  },
+  {
+    "type": "way",
+    "id": 504,
+    "center": {
+      "lat": 18.5284,
+      "lon": 73.9482
+    },
+    "tags": {
+      "name": "Godrej Infinity",
+      "residential": "gated",
+      "locality": "Keshavnagar Mundhwa"
+    }
+  },
+  {
+    "type": "way",
+    "id": 505,
+    "center": {
+      "lat": 18.6142,
+      "lon": 73.7198
+    },
+    "tags": {
+      "name": "Kolte Patil Life Republic",
+      "landuse": "residential",
+      "locality": "Hinjewadi Marunji"
+    }
+  },
+  {
+    "type": "way",
+    "id": 506,
+    "center": {
+      "lat": 18.5582,
+      "lon": 73.8964
+    },
+    "tags": {
+      "name": "Rohan Mithila",
+      "building": "apartments",
+      "locality": "Viman Nagar"
+    }
+  },
+  {
+    "type": "way",
+    "id": 507,
+    "center": {
+      "lat": 18.5679,
+      "lon": 73.7769
+    },
+    "tags": {
+      "name": "Kasturi The Balmoral Estate",
+      "residential": "gated",
+      "locality": "Baner Balewadi"
+    }
+  },
+  {
+    "type": "way",
+    "id": 508,
+    "center": {
+      "lat": 18.5516,
+      "lon": 73.9515
+    },
+    "tags": {
+      "name": "Panchshil Towers",
+      "residential": "gated",
+      "locality": "Kharadi EON Corridor"
+    }
+  },
+  {
+    "type": "way",
+    "id": 509,
+    "center": {
+      "lat": 18.4712,
+      "lon": 73.8965
+    },
+    "tags": {
+      "name": "Kolte Patil 24K Glamore",
+      "residential": "gated",
+      "locality": "NIBM Undri"
+    }
+  },
+  {
+    "type": "way",
+    "id": 510,
+    "center": {
+      "lat": 18.502,
+      "lon": 73.805
+    },
+    "tags": {
+      "name": "Kumar Parisar",
+      "building": "apartments",
+      "locality": "Kothrud"
+    }
+  },
+  {
+    "type": "way",
+    "id": 511,
+    "center": {
+      "lat": 18.568,
+      "lon": 73.792
+    },
+    "tags": {
+      "name": "Rohan Leher",
+      "landuse": "residential",
+      "locality": "Baner"
+    }
+  },
+  {
+    "type": "way",
+    "id": 512,
+    "center": {
+      "lat": 18.628,
+      "lon": 73.755
+    },
+    "tags": {
+      "name": "Empire Estate",
+      "landuse": "residential",
+      "locality": "Chinchwad PCMC"
+    }
+  }
+]

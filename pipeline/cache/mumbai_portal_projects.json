@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Hiranandani Gardens",
+    "developer": "Hiranandani Group",
+    "locality": "Powai",
+    "lat": 19.1197,
+    "lng": 72.9062,
+    "rera_id": "P51800000143",
+    "source_url": "https://www.magicbricks.com/hiranandani-gardens-powai-mumbai-pdpid-4d42353031303137",
+    "amenities": [
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "squash",
+      "tennis",
+      "security"
+    ],
+    "units": [
+      {
+        "bhk": "2BHK",
+        "carpet_sqft": 780,
+        "super_sqft": 1100,
+        "bedrooms": [
+          "11'0\"x13'0\"",
+          "11'6\"x12'6\""
+        ],
+        "sale_price": 24000000,
+        "rent": 65000,
+        "deposit": 195000,
+        "furnishing": "FULLY_FURNISHED"
+      },
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 1250,
+        "super_sqft": 1750,
+        "bedrooms": [
+          "12'0\"x14'6\"",
+          "11'6\"x13'0\"",
+          "13'6\"x16'0\""
+        ],
+        "sale_price": 41000000,
+        "rent": 110000,
+        "deposit": 330000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  },
+  {
+    "name": "Lodha Park",
+    "developer": "Lodha Group",
+    "locality": "Worli",
+    "lat": 19.0068,
+    "lng": 72.8311,
+    "rera_id": "P51900000124",
+    "source_url": "https://www.magicbricks.com/lodha-park-worli-mumbai-pdpid-4d42353031303138",
+    "amenities": [
+      "7_acre_private_park",
+      "gym",
+      "swimming_pool",
+      "clubhouse",
+      "squash",
+      "spa"
+    ],
+    "units": [
+      {
+        "bhk": "2BHK",
+        "carpet_sqft": 890,
+        "super_sqft": 1250,
+        "bedrooms": [
+          "11'6\"x13'6\"",
+          "12'0\"x14'0\""
+        ],
+        "sale_price": 45000000,
+        "rent": 125000,
+        "deposit": 375000,
+        "furnishing": "FULLY_FURNISHED"
+      },
+      {
+        "bhk": "3BHK",
+        "carpet_sqft": 1450,
+        "super_sqft": 2050,
+        "bedrooms": [
+          "12'6\"x15'0\"",
+          "12'0\"x14'0\"",
+          "14'0\"x17'0\""
+        ],
+        "sale_price": 75000000,
+        "rent": 195000,
+        "deposit": 585000,
+        "furnishing": "FULLY_FURNISHED"
+      }
+    ]
+  }
+]

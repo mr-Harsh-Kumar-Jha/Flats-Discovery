@@ -1,0 +1,365 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0987,
+          28.4732
+        ]
+      },
+      "properties": {
+        "id": "dlf-the-aralias-gurgaon",
+        "name": "DLF The Aralias",
+        "slug": "dlf-the-aralias-gurgaon",
+        "locality": "Golf Course Road",
+        "min_rent": 31000.0,
+        "max_rent": 72500.0,
+        "min_price": 11705900.0,
+        "max_price": 27108400.0,
+        "avg_price_per_sqft": 12322,
+        "rental_yield_pct": 3.2,
+        "price_to_rent_ratio": 31.5,
+        "nearest_metro_station": "Sector 42-43 (Rapid Metro)",
+        "metro_distance_meters": 582,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 17,
+          "golf_course_rd": 4,
+          "golf_course_ext": 34,
+          "udyog_vihar": 21,
+          "sohna_road": 36
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "HRERA-GGM-1677600",
+        "rating": 4.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.102,
+          28.476
+        ]
+      },
+      "properties": {
+        "id": "dlf-the-camellias-gurgaon",
+        "name": "DLF The Camellias",
+        "slug": "dlf-the-camellias-gurgaon",
+        "locality": "Golf Course Road",
+        "min_rent": 39000.0,
+        "max_rent": 98000.0,
+        "min_price": 13054000.0,
+        "max_price": 32635000.0,
+        "avg_price_per_sqft": 13054,
+        "rental_yield_pct": 3.6,
+        "price_to_rent_ratio": 27.9,
+        "nearest_metro_station": "Sector 42-43 (Rapid Metro)",
+        "metro_distance_meters": 972,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 16,
+          "golf_course_rd": 6,
+          "golf_course_ext": 36,
+          "udyog_vihar": 21,
+          "sohna_road": 38
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "HRERA-GGM-1701158",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.095,
+          28.481
+        ]
+      },
+      "properties": {
+        "id": "dlf-the-crest-gurgaon",
+        "name": "DLF The Crest",
+        "slug": "dlf-the-crest-gurgaon",
+        "locality": "DLF Phase 5",
+        "min_rent": 32500.0,
+        "max_rent": 90500.0,
+        "min_price": 12627000.0,
+        "max_price": 35075000.0,
+        "avg_price_per_sqft": 14030,
+        "rental_yield_pct": 3.1,
+        "price_to_rent_ratio": 32.4,
+        "nearest_metro_station": "DLF Phase 2 (Rapid Metro)",
+        "metro_distance_meters": 243,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 12,
+          "golf_course_rd": 9,
+          "golf_course_ext": 37,
+          "udyog_vihar": 18,
+          "sohna_road": 38
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "HRERA-GGM-1829449",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0712,
+          28.4111
+        ]
+      },
+      "properties": {
+        "id": "m3m-golfestate-gurgaon",
+        "name": "M3M Golfestate",
+        "slug": "m3m-golfestate-gurgaon",
+        "locality": "Golf Course Ext Road",
+        "min_rent": 31500.0,
+        "max_rent": 63500.0,
+        "min_price": 12285400.0,
+        "max_price": 24570800.0,
+        "avg_price_per_sqft": 12932,
+        "rental_yield_pct": 3.1,
+        "price_to_rent_ratio": 32.5,
+        "nearest_metro_station": "Sector 55-56 (Rapid Metro)",
+        "metro_distance_meters": 4322,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 42,
+          "golf_course_rd": 34,
+          "golf_course_ext": 4,
+          "udyog_vihar": 48,
+          "sohna_road": 18
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "HRERA-GGM-1115862",
+        "rating": 4.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0392,
+          28.4239
+        ]
+      },
+      "properties": {
+        "id": "central-park-resorts-gurgaon",
+        "name": "Central Park Resorts",
+        "slug": "central-park-resorts-gurgaon",
+        "locality": "Sohna Road",
+        "min_rent": 27000.0,
+        "max_rent": 72500.0,
+        "min_price": 9333000.0,
+        "max_price": 24888000.0,
+        "avg_price_per_sqft": 10370,
+        "rental_yield_pct": 3.5,
+        "price_to_rent_ratio": 28.8,
+        "nearest_metro_station": "Millennium City Centre Gurugram (HUDA City Centre)",
+        "metro_distance_meters": 5064,
+        "metro_line": "Yellow Line",
+        "office_commute": {
+          "cyber_city": 42,
+          "golf_course_rd": 36,
+          "golf_course_ext": 18,
+          "udyog_vihar": 46,
+          "sohna_road": 4
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "HRERA-GGM-1453151",
+        "rating": 4.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.062,
+          28.405
+        ]
+      },
+      "properties": {
+        "id": "tata-primanti-gurgaon",
+        "name": "Tata Primanti",
+        "slug": "tata-primanti-gurgaon",
+        "locality": "Sector 72 SPR",
+        "min_rent": 42500.0,
+        "max_rent": 85000.0,
+        "min_price": 13444400.0,
+        "max_price": 26888800.0,
+        "avg_price_per_sqft": 14152,
+        "rental_yield_pct": 3.8,
+        "price_to_rent_ratio": 26.4,
+        "nearest_metro_station": "Sector 55-56 (Rapid Metro)",
+        "metro_distance_meters": 5432,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 46,
+          "golf_course_rd": 38,
+          "golf_course_ext": 10,
+          "udyog_vihar": 43,
+          "sohna_road": 16
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "HRERA-GGM-1252901",
+        "rating": 4.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.085,
+          28.435
+        ]
+      },
+      "properties": {
+        "id": "ireo-grand-arch-gurgaon",
+        "name": "Ireo Grand Arch",
+        "slug": "ireo-grand-arch-gurgaon",
+        "locality": "Sector 58",
+        "min_rent": 34500.0,
+        "max_rent": 72000.0,
+        "min_price": 11126400.0,
+        "max_price": 23424000.0,
+        "avg_price_per_sqft": 11712,
+        "rental_yield_pct": 3.7,
+        "price_to_rent_ratio": 26.9,
+        "nearest_metro_station": "Sector 54 Chowk (Rapid Metro)",
+        "metro_distance_meters": 1974,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 31,
+          "golf_course_rd": 22,
+          "golf_course_ext": 16,
+          "udyog_vihar": 37,
+          "sohna_road": 23
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "HRERA-GGM-1805757",
+        "rating": 4.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.012,
+          28.515
+        ]
+      },
+      "properties": {
+        "id": "sobha-city-gurgaon",
+        "name": "Sobha City",
+        "slug": "sobha-city-gurgaon",
+        "locality": "Sector 108 Dwarka Exp",
+        "min_rent": 29000.0,
+        "max_rent": 52000.0,
+        "min_price": 11224000.0,
+        "max_price": 20203200.0,
+        "avg_price_per_sqft": 11224,
+        "rental_yield_pct": 3.1,
+        "price_to_rent_ratio": 32.3,
+        "nearest_metro_station": "IFFCO Chowk",
+        "metro_distance_meters": 7566,
+        "metro_line": "Yellow Line",
+        "office_commute": {
+          "cyber_city": 36,
+          "golf_course_rd": 43,
+          "golf_course_ext": 48,
+          "udyog_vihar": 32,
+          "sohna_road": 46
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "HRERA-GGM-1865048",
+        "rating": 4.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.025,
+          28.498
+        ]
+      },
+      "properties": {
+        "id": "godrej-meridien-gurgaon",
+        "name": "Godrej Meridien",
+        "slug": "godrej-meridien-gurgaon",
+        "locality": "Sector 106",
+        "min_rent": 32500.0,
+        "max_rent": 74000.0,
+        "min_price": 12614800.0,
+        "max_price": 28670000.0,
+        "avg_price_per_sqft": 11468,
+        "rental_yield_pct": 3.1,
+        "price_to_rent_ratio": 32.3,
+        "nearest_metro_station": "IFFCO Chowk",
+        "metro_distance_meters": 5428,
+        "metro_line": "Yellow Line",
+        "office_commute": {
+          "cyber_city": 30,
+          "golf_course_rd": 35,
+          "golf_course_ext": 47,
+          "udyog_vihar": 27,
+          "sohna_road": 38
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "HRERA-GGM-1095213",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.099,
+          28.455
+        ]
+      },
+      "properties": {
+        "id": "vipul-belmonte-gurgaon",
+        "name": "Vipul Belmonte",
+        "slug": "vipul-belmonte-gurgaon",
+        "locality": "Golf Course Road",
+        "min_rent": 34000.0,
+        "max_rent": 77000.0,
+        "min_price": 11913300.0,
+        "max_price": 27230400.0,
+        "avg_price_per_sqft": 11346,
+        "rental_yield_pct": 3.4,
+        "price_to_rent_ratio": 29.2,
+        "nearest_metro_station": "Sector 53-54 (Rapid Metro)",
+        "metro_distance_meters": 314,
+        "metro_line": "Rapid Metro",
+        "office_commute": {
+          "cyber_city": 22,
+          "golf_course_rd": 14,
+          "golf_course_ext": 27,
+          "udyog_vihar": 29,
+          "sohna_road": 32
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "HRERA-GGM-1179584",
+        "rating": 4.8
+      }
+    }
+  ]
+}

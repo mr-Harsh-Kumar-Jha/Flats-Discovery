@@ -1,0 +1,145 @@
+[
+  {
+    "type": "way",
+    "id": 601,
+    "center": {
+      "lat": 19.1197,
+      "lon": 72.9051
+    },
+    "tags": {
+      "name": "Hiranandani Gardens",
+      "landuse": "residential",
+      "locality": "Powai"
+    }
+  },
+  {
+    "type": "way",
+    "id": 602,
+    "center": {
+      "lat": 18.9953,
+      "lon": 72.8258
+    },
+    "tags": {
+      "name": "Lodha The Park",
+      "residential": "gated",
+      "locality": "Worli Lower Parel"
+    }
+  },
+  {
+    "type": "way",
+    "id": 603,
+    "center": {
+      "lat": 19.108,
+      "lon": 72.826
+    },
+    "tags": {
+      "name": "Rustomjee Elements",
+      "building": "apartments",
+      "locality": "Juhu Upper"
+    }
+  },
+  {
+    "type": "way",
+    "id": 604,
+    "center": {
+      "lat": 19.0657,
+      "lon": 72.858
+    },
+    "tags": {
+      "name": "Kalpataru Sparkle",
+      "residential": "gated",
+      "locality": "Bandra East BKC"
+    }
+  },
+  {
+    "type": "way",
+    "id": 605,
+    "center": {
+      "lat": 19.176,
+      "lon": 72.864
+    },
+    "tags": {
+      "name": "Oberoi Exquisite Woods",
+      "residential": "gated",
+      "locality": "Goregaon East"
+    }
+  },
+  {
+    "type": "way",
+    "id": 606,
+    "center": {
+      "lat": 19.018,
+      "lon": 72.862
+    },
+    "tags": {
+      "name": "Dosti Eastern Bay",
+      "building": "apartments",
+      "locality": "Wadala East"
+    }
+  },
+  {
+    "type": "way",
+    "id": 607,
+    "center": {
+      "lat": 19.102,
+      "lon": 72.928
+    },
+    "tags": {
+      "name": "Godrej The Trees",
+      "residential": "gated",
+      "locality": "Vikhroli East"
+    }
+  },
+  {
+    "type": "way",
+    "id": 608,
+    "center": {
+      "lat": 18.985,
+      "lon": 72.821
+    },
+    "tags": {
+      "name": "Raheja Vivarea",
+      "residential": "gated",
+      "locality": "Mahalaxmi"
+    }
+  },
+  {
+    "type": "way",
+    "id": 609,
+    "center": {
+      "lat": 19.165,
+      "lon": 72.942
+    },
+    "tags": {
+      "name": "Runwal Greens",
+      "landuse": "residential",
+      "locality": "Mulund West"
+    }
+  },
+  {
+    "type": "way",
+    "id": 610,
+    "center": {
+      "lat": 19.215,
+      "lon": 72.965
+    },
+    "tags": {
+      "name": "Wadhwa Courtyard",
+      "residential": "gated",
+      "locality": "Thane West Pokhran"
+    }
+  },
+  {
+    "type": "way",
+    "id": 611,
+    "center": {
+      "lat": 19.1551,
+      "lon": 72.9986
+    },
+    "tags": {
+      "name": "Akshar Green World",
+      "residential": "gated",
+      "locality": "Navi Mumbai Airoli"
+    }
+  }
+]

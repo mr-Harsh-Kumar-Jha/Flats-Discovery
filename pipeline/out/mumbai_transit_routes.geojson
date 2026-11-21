@@ -1,0 +1,220 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mumbai-monorail",
+        "name": "Mumbai Monorail (Green / Cyan Corridor)",
+        "route_type": "monorail",
+        "color": "#14b8a6",
+        "details": "Sant Gadge Maharaj Chowk (Jacob Circle) \u27f7 Wadala \u27f7 Chembur (17 stations)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.829,
+            18.9818
+          ],
+          [
+            72.8335,
+            18.995
+          ],
+          [
+            72.848,
+            19.011
+          ],
+          [
+            72.861,
+            19.022
+          ],
+          [
+            72.867,
+            19.034
+          ],
+          [
+            72.885,
+            19.049
+          ],
+          [
+            72.899,
+            19.062
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mumbai-line-1",
+        "name": "Mumbai Metro Line 1 (Versova - Ghatkopar)",
+        "route_type": "metro",
+        "color": "#3b82f6",
+        "details": "Versova \u27f7 D.N. Nagar \u27f7 Andheri \u27f7 Saki Naka \u27f7 Ghatkopar"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.8205,
+            19.1306
+          ],
+          [
+            72.8315,
+            19.1255
+          ],
+          [
+            72.8465,
+            19.1205
+          ],
+          [
+            72.857,
+            19.1155
+          ],
+          [
+            72.868,
+            19.112
+          ],
+          [
+            72.875,
+            19.11
+          ],
+          [
+            72.885,
+            19.111
+          ],
+          [
+            72.898,
+            19.108
+          ],
+          [
+            72.908,
+            19.086
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mumbai-line-3",
+        "name": "Mumbai Metro Line 3 (Aqua Underground)",
+        "route_type": "metro",
+        "color": "#06b6d4",
+        "details": "Aarey JVLR \u27f7 SEEPZ \u27f7 CSMIA Airport \u27f7 BKC"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.888,
+            19.143
+          ],
+          [
+            72.882,
+            19.135
+          ],
+          [
+            72.872,
+            19.128
+          ],
+          [
+            72.874,
+            19.096
+          ],
+          [
+            72.865,
+            19.089
+          ],
+          [
+            72.852,
+            19.088
+          ],
+          [
+            72.8687,
+            19.0657
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mumbai-western-rail",
+        "name": "Western Railway Suburban Corridor",
+        "route_type": "railway",
+        "color": "#ef4444",
+        "details": "Churchgate \u27f7 Mumbai Central \u27f7 Dadar \u27f7 Bandra \u27f7 Andheri \u27f7 Borivali"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.827,
+            18.932
+          ],
+          [
+            72.819,
+            18.969
+          ],
+          [
+            72.843,
+            19.018
+          ],
+          [
+            72.84,
+            19.055
+          ],
+          [
+            72.846,
+            19.119
+          ],
+          [
+            72.857,
+            19.229
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mumbai-central-rail",
+        "name": "Central Railway Suburban Corridor",
+        "route_type": "railway",
+        "color": "#b91c1c",
+        "details": "CSMT \u27f7 Byculla \u27f7 Dadar \u27f7 Kurla \u27f7 Ghatkopar \u27f7 Thane \u27f7 Kalyan"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.835,
+            18.94
+          ],
+          [
+            72.833,
+            18.975
+          ],
+          [
+            72.843,
+            19.018
+          ],
+          [
+            72.875,
+            19.065
+          ],
+          [
+            72.908,
+            19.086
+          ],
+          [
+            72.978,
+            19.186
+          ]
+        ]
+      }
+    }
+  ]
+}

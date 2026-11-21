@@ -1,0 +1,412 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9051,
+          19.1197
+        ]
+      },
+      "properties": {
+        "id": "hiranandani-gardens-mumbai",
+        "name": "Hiranandani Gardens",
+        "slug": "hiranandani-gardens-mumbai",
+        "locality": "Powai",
+        "min_rent": 60500.0,
+        "max_rent": 138500.0,
+        "min_price": 21930000.0,
+        "max_price": 50439000.0,
+        "avg_price_per_sqft": 21930,
+        "rental_yield_pct": 3.3,
+        "price_to_rent_ratio": 30.2,
+        "nearest_metro_station": "Saki Naka",
+        "metro_distance_meters": 1500,
+        "metro_line": "Line 1",
+        "office_commute": {
+          "bkc": 33,
+          "lower_parel": 58,
+          "andheri_east": 18,
+          "powai": 4,
+          "malad": 46,
+          "navi_mumbai": 47
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "P5180001589829",
+        "rating": 4.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8258,
+          18.9953
+        ]
+      },
+      "properties": {
+        "id": "lodha-the-park-mumbai",
+        "name": "Lodha The Park",
+        "slug": "lodha-the-park-mumbai",
+        "locality": "Worli Lower Parel",
+        "min_rent": 51000.0,
+        "max_rent": 123500.0,
+        "min_price": 22671750.0,
+        "max_price": 54889500.0,
+        "avg_price_per_sqft": 23865,
+        "rental_yield_pct": 2.7,
+        "price_to_rent_ratio": 37.0,
+        "nearest_metro_station": "BKC (Line 3 Aqua)",
+        "metro_distance_meters": 9034,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 41,
+          "lower_parel": 4,
+          "andheri_east": 54,
+          "powai": 58,
+          "malad": 76,
+          "navi_mumbai": 90
+        },
+        "min_bedroom_dims": "11x13",
+        "rera_id": "P5180001845724",
+        "rating": 4.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.826,
+          19.108
+        ]
+      },
+      "properties": {
+        "id": "rustomjee-elements-mumbai",
+        "name": "Rustomjee Elements",
+        "slug": "rustomjee-elements-mumbai",
+        "locality": "Juhu Upper",
+        "min_rent": 56000.0,
+        "max_rent": 155000.0,
+        "min_price": 20317500.0,
+        "max_price": 56437500.0,
+        "avg_price_per_sqft": 22575,
+        "rental_yield_pct": 3.3,
+        "price_to_rent_ratio": 30.2,
+        "nearest_metro_station": "D.N. Nagar (Interchange Line 1/2A)",
+        "metro_distance_meters": 2030,
+        "metro_line": "Line 1",
+        "office_commute": {
+          "bkc": 30,
+          "lower_parel": 46,
+          "andheri_east": 27,
+          "powai": 38,
+          "malad": 39,
+          "navi_mumbai": 68
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5180001776075",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.858,
+          19.0657
+        ]
+      },
+      "properties": {
+        "id": "kalpataru-sparkle-mumbai",
+        "name": "Kalpataru Sparkle",
+        "slug": "kalpataru-sparkle-mumbai",
+        "locality": "Bandra East BKC",
+        "min_rent": 36500.0,
+        "max_rent": 72500.0,
+        "min_price": 17415000.0,
+        "max_price": 34830000.0,
+        "avg_price_per_sqft": 19350,
+        "rental_yield_pct": 2.5,
+        "price_to_rent_ratio": 39.8,
+        "nearest_metro_station": "BKC (Line 3 Aqua)",
+        "metro_distance_meters": 1125,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 10,
+          "lower_parel": 39,
+          "andheri_east": 30,
+          "powai": 36,
+          "malad": 50,
+          "navi_mumbai": 64
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "P5180001797300",
+        "rating": 4.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.864,
+          19.176
+        ]
+      },
+      "properties": {
+        "id": "oberoi-exquisite-woods-mumbai",
+        "name": "Oberoi Exquisite Woods",
+        "slug": "oberoi-exquisite-woods-mumbai",
+        "locality": "Goregaon East",
+        "min_rent": 48500.0,
+        "max_rent": 121000.0,
+        "min_price": 18705000.0,
+        "max_price": 46762500.0,
+        "avg_price_per_sqft": 18705,
+        "rental_yield_pct": 3.1,
+        "price_to_rent_ratio": 32.1,
+        "nearest_metro_station": "Goregaon East (Line 7)",
+        "metro_distance_meters": 420,
+        "metro_line": "Line 7",
+        "office_commute": {
+          "bkc": 45,
+          "lower_parel": 73,
+          "andheri_east": 30,
+          "powai": 35,
+          "malad": 17,
+          "navi_mumbai": 52
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5180001634175",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.862,
+          19.018
+        ]
+      },
+      "properties": {
+        "id": "dosti-eastern-bay-mumbai",
+        "name": "Dosti Eastern Bay",
+        "slug": "dosti-eastern-bay-mumbai",
+        "locality": "Wadala East",
+        "min_rent": 45500.0,
+        "max_rent": 74500.0,
+        "min_price": 21048500.0,
+        "max_price": 34443000.0,
+        "avg_price_per_sqft": 19135,
+        "rental_yield_pct": 2.6,
+        "price_to_rent_ratio": 38.6,
+        "nearest_metro_station": "BKC (Line 3 Aqua)",
+        "metro_distance_meters": 5351,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 26,
+          "lower_parel": 23,
+          "andheri_east": 43,
+          "powai": 45,
+          "malad": 68,
+          "navi_mumbai": 75
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "P5180001214580",
+        "rating": 4.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.928,
+          19.102
+        ]
+      },
+      "properties": {
+        "id": "godrej-the-trees-mumbai",
+        "name": "Godrej The Trees",
+        "slug": "godrej-the-trees-mumbai",
+        "locality": "Vikhroli East",
+        "min_rent": 62500.0,
+        "max_rent": 142000.0,
+        "min_price": 23413500.0,
+        "max_price": 53212500.0,
+        "avg_price_per_sqft": 21285,
+        "rental_yield_pct": 3.2,
+        "price_to_rent_ratio": 31.2,
+        "nearest_metro_station": "Ghatkopar (Interchange Central Railway)",
+        "metro_distance_meters": 2754,
+        "metro_line": "Line 1",
+        "office_commute": {
+          "bkc": 34,
+          "lower_parel": 58,
+          "andheri_east": 26,
+          "powai": 17,
+          "malad": 49,
+          "navi_mumbai": 42
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5180001605722",
+        "rating": 4.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.821,
+          18.985
+        ]
+      },
+      "properties": {
+        "id": "raheja-vivarea-mumbai",
+        "name": "Raheja Vivarea",
+        "slug": "raheja-vivarea-mumbai",
+        "locality": "Mahalaxmi",
+        "min_rent": 64500.0,
+        "max_rent": 135000.0,
+        "min_price": 26638500.0,
+        "max_price": 55814000.0,
+        "avg_price_per_sqft": 25370,
+        "rental_yield_pct": 2.9,
+        "price_to_rent_ratio": 34.4,
+        "nearest_metro_station": "BKC (Line 3 Aqua)",
+        "metro_distance_meters": 10279,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 46,
+          "lower_parel": 10,
+          "andheri_east": 59,
+          "powai": 63,
+          "malad": 80,
+          "navi_mumbai": 94
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "P5180001676338",
+        "rating": 4.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.942,
+          19.165
+        ]
+      },
+      "properties": {
+        "id": "runwal-greens-mumbai",
+        "name": "Runwal Greens",
+        "slug": "runwal-greens-mumbai",
+        "locality": "Mulund West",
+        "min_rent": 39500.0,
+        "max_rent": 75000.0,
+        "min_price": 17565500.0,
+        "max_price": 33282000.0,
+        "avg_price_per_sqft": 18490,
+        "rental_yield_pct": 2.7,
+        "price_to_rent_ratio": 37.1,
+        "nearest_metro_station": "Aarey JVLR",
+        "metro_distance_meters": 6177,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 49,
+          "lower_parel": 80,
+          "andheri_east": 37,
+          "powai": 30,
+          "malad": 42,
+          "navi_mumbai": 28
+        },
+        "min_bedroom_dims": "11x12",
+        "rera_id": "P5180001477522",
+        "rating": 4.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.965,
+          19.215
+        ]
+      },
+      "properties": {
+        "id": "wadhwa-courtyard-mumbai",
+        "name": "Wadhwa Courtyard",
+        "slug": "wadhwa-courtyard-mumbai",
+        "locality": "Thane West Pokhran",
+        "min_rent": 49000.0,
+        "max_rent": 103500.0,
+        "min_price": 22671750.0,
+        "max_price": 47730000.0,
+        "avg_price_per_sqft": 23865,
+        "rental_yield_pct": 2.6,
+        "price_to_rent_ratio": 38.6,
+        "nearest_metro_station": "Aarey JVLR",
+        "metro_distance_meters": 11379,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 70,
+          "lower_parel": 100,
+          "andheri_east": 51,
+          "powai": 46,
+          "malad": 51,
+          "navi_mumbai": 35
+        },
+        "min_bedroom_dims": "12x14",
+        "rera_id": "P5180001707786",
+        "rating": 4.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9986,
+          19.1551
+        ]
+      },
+      "properties": {
+        "id": "akshar-green-world-mumbai",
+        "name": "Akshar Green World",
+        "slug": "akshar-green-world-mumbai",
+        "locality": "Navi Mumbai Airoli",
+        "min_rent": 63500.0,
+        "max_rent": 121500.0,
+        "min_price": 24596000.0,
+        "max_price": 46956000.0,
+        "avg_price_per_sqft": 22360,
+        "rental_yield_pct": 3.1,
+        "price_to_rent_ratio": 32.3,
+        "nearest_metro_station": "Aarey JVLR",
+        "metro_distance_meters": 11695,
+        "metro_line": "Line 3 Aqua",
+        "office_commute": {
+          "bkc": 61,
+          "lower_parel": 90,
+          "andheri_east": 48,
+          "powai": 47,
+          "malad": 63,
+          "navi_mumbai": 4
+        },
+        "min_bedroom_dims": "12x15",
+        "rera_id": "P5180001143529",
+        "rating": 4.5
+      }
+    }
+  ]
+}

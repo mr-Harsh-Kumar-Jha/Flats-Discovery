@@ -8,17 +8,46 @@ import AboutModal from './components/AboutModal';
 import CreatePinModal from './components/CreatePinModal';
 import ChatPanel from './components/ChatPanel';
 import PinDetailModal from './components/PinDetailModal';
+import FlatmateDeckModal from './components/FlatmateDeckModal';
+import UserOnboardingModal from './components/UserOnboardingModal';
 import Legend from './components/Legend';
 import { useMapStore } from './stores/mapStore';
+import { usePinsStore } from './stores/pinsStore';
 
 /**
  * App — Root component.
  * Map-first layout: full-screen map with floating UI panels.
  */
 function App() {
-  const { pinMode, setPinMode, pendingPinCoords, setPendingPinCoords, selectedPin, setSelectedPin } = useMapStore();
+  const { pinMode, setPinMode, pendingPinCoords, setPendingPinCoords, selectedPin, setSelectedPin, mobileView, toggleMobileView } = useMapStore();
+  const getFilteredFlats = usePinsStore((s) => s.getFilteredFlats);
   const [createModalOpen, setCreateModalOpen] = useState(false);
+  const [flatmateDeckOpen, setFlatmateDeckOpen] = useState(false);
+  const [onboardingOpen, setOnboardingOpen] = useState(false);
   const [createTab, setCreateTab] = useState('flat'); // 'flat' | 'seeker' | 'rent'
+
+  const displayFlats = getFilteredFlats();
+
+  // Trigger onboarding for new users on first visit
+  useEffect(() => {
+    const hasOnboarded = localStorage.getItem('has_onboarded_v1');
+    if (!hasOnboarded) {
+      const timer = setTimeout(() => setOnboardingOpen(true), 700);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleCompleteGoal = (goal) => {
+    if (goal === 'FLATMATE') {
+      setFlatmateDeckOpen(true);
+    } else if (goal === 'BUY') {
+      usePinsStore.getState().setFilters({ mode: 'buy' });
+    } else if (goal === 'RENT') {
+      usePinsStore.getState().setFilters({ mode: 'rent' });
+    } else if (goal === 'LIST') {
+      enterPinMode('flat');
+    }
+  };
 
   // When user taps map in pin mode, open the create form
   useEffect(() => {
@@ -42,8 +71,14 @@ function App() {
       {/* Full-screen map (base layer) */}
       <MapView />
 
+      {/* Unified Search & Quick Controls */}
+      <SearchBar
+        onOpenFlatmates={() => setFlatmateDeckOpen(true)}
+        onOpenOnboarding={() => setOnboardingOpen(true)}
+        onAddListing={() => enterPinMode('flat')}
+      />
+
       {/* Floating UI panels */}
-      <SearchBar />
       <Sidebar />
       <LayerPanel />
       <DevAuthBar />
@@ -51,32 +86,25 @@ function App() {
       <ChatPanel />
       <Legend />
 
-      {/* ── Chicklet Bar (below search) — primary action entry points ── */}
-      {!pinMode && (
-        <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-30 flex gap-2 px-4 max-w-md w-full overflow-x-auto scrollbar-none">
-          <button
-            onClick={() => enterPinMode('rent')}
-            className="chicklet"
-          >
-            <span className="text-sm">📍</span>
-            I pay rent here
-          </button>
-          <button
-            onClick={() => enterPinMode('flat')}
-            className="chicklet"
-          >
-            <span className="text-sm">🏠</span>
-            List my flat
-          </button>
-          <button
-            onClick={() => enterPinMode('seeker')}
-            className="chicklet"
-          >
-            <span className="text-sm">🔍</span>
-            I'm looking
-          </button>
-        </div>
-      )}
+      {/* ── Mobile View Toggle Pill (Show List vs Show Map) ── */}
+      <div className="md:hidden fixed bottom-14 left-1/2 -translate-x-1/2 z-40">
+        <button
+          onClick={toggleMobileView}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950/95 border border-white/20 text-white font-bold text-xs shadow-2xl backdrop-blur-xl hover:scale-105 active:scale-95 transition-all"
+        >
+          {mobileView === 'map' ? (
+            <>
+              <span className="text-sm">📋</span>
+              <span>Show List ({displayFlats.length})</span>
+            </>
+          ) : (
+            <>
+              <span className="text-sm">🗺️</span>
+              <span>Show Map</span>
+            </>
+          )}
+        </button>
+      </div>
 
       {/* ── Pin Mode Banner — shown when user is placing a pin ── */}
       {pinMode && (
@@ -115,6 +143,19 @@ function App() {
           coords={pendingPinCoords}
         />
       )}
+
+      {/* ── Tinder for Flatmates Deck ── */}
+      <FlatmateDeckModal
+        isOpen={flatmateDeckOpen}
+        onClose={() => setFlatmateDeckOpen(false)}
+      />
+
+      {/* ── End-to-End User Onboarding ── */}
+      <UserOnboardingModal
+        isOpen={onboardingOpen}
+        onClose={() => setOnboardingOpen(false)}
+        onCompleteGoal={handleCompleteGoal}
+      />
     </div>
   );
 }

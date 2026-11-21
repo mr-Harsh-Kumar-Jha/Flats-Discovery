@@ -95,6 +95,9 @@ func main() {
 	toletRepo := repository.NewToLetRepository(pool)
 	matchRepo := repository.NewMatchRepository(pool)
 	chatRepo := repository.NewChatRepository(pool)
+	flatmateRepo := repository.NewFlatmateRepository(pool)
+	societyRepo := repository.NewSocietyRepository(pool)
+	userRepo := repository.NewUserRepository(pool)
 
 	// -----------------------------------------------------------------------
 	// WebSocket Hub
@@ -109,6 +112,9 @@ func main() {
 	pinHandler := handler.NewPinHandler(flatRepo, seekerRepo, heatmapRepo, toletRepo, cityRepo, matchRepo, logger)
 	matchHandler := handler.NewMatchHandler(matchRepo, logger)
 	chatHandler := handler.NewChatHandler(chatRepo, wsHub, logger)
+	flatmateHandler := handler.NewFlatmateHandler(flatmateRepo, chatRepo, logger)
+	societyHandler := handler.NewSocietyHandler(societyRepo, logger)
+	userHandler := handler.NewUserHandler(userRepo, logger)
 
 	// -----------------------------------------------------------------------
 	// Background Workers
@@ -175,6 +181,8 @@ func main() {
 	r.Route("/api/v1", func(r chi.Router) {
 		// Public routes (no auth required)
 		r.Get("/cities", cityHandler.ListActive)
+		r.Get("/societies", societyHandler.ListSocieties)
+		r.Get("/flatmates", flatmateHandler.ListCandidates)
 
 		// Pin routes with bbox size guard
 		r.Group(func(r chi.Router) {
@@ -206,6 +214,13 @@ func main() {
 
 			// Matches
 			r.Get("/matches", matchHandler.ListMyMatches)
+
+			// Flatmate Swipes (Tinder for Flatmates)
+			r.Post("/flatmates/swipe", flatmateHandler.Swipe)
+
+			// User Onboarding & Profile
+			r.Post("/users/onboarding", userHandler.SaveOnboarding)
+			r.Get("/users/me", userHandler.GetProfile)
 
 			// Chat & E2EE
 			r.Route("/chat", func(r chi.Router) {

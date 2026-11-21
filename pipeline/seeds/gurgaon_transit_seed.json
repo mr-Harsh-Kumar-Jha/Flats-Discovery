@@ -1,0 +1,18 @@
+{
+  "elements": [
+    { "type": "node", "id": 3001, "lat": 28.4950, "lon": 77.0895, "tags": { "name": "Cyber City (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3002, "lat": 28.4910, "lon": 77.0930, "tags": { "name": "Belvedere Towers (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3003, "lat": 28.4830, "lon": 77.0940, "tags": { "name": "DLF Phase 2 (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3004, "lat": 28.4795, "lon": 77.0865, "tags": { "name": "Sikanderpur (Interchange Yellow / Rapid)", "station": "subway", "line": "Interchange" } },
+    { "type": "node", "id": 3005, "lat": 28.4790, "lon": 77.0780, "tags": { "name": "MG Road", "station": "subway", "line": "Yellow Line" } },
+    { "type": "node", "id": 3006, "lat": 28.4720, "lon": 77.0720, "tags": { "name": "IFFCO Chowk", "station": "subway", "line": "Yellow Line" } },
+    { "type": "node", "id": 3007, "lat": 28.4595, "lon": 77.0715, "tags": { "name": "Millennium City Centre Gurugram (HUDA City Centre)", "station": "subway", "line": "Yellow Line" } },
+    { "type": "node", "id": 3008, "lat": 28.4680, "lon": 77.0980, "tags": { "name": "Sector 42-43 (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3009, "lat": 28.4540, "lon": 77.1020, "tags": { "name": "Sector 53-54 (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3010, "lat": 28.4410, "lon": 77.1040, "tags": { "name": "Sector 54 Chowk (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3011, "lat": 28.4280, "lon": 77.1110, "tags": { "name": "Sector 55-56 (Rapid Metro)", "station": "subway", "line": "Rapid Metro" } },
+    { "type": "node", "id": 3020, "lat": 28.4680, "lon": 77.0180, "tags": { "name": "Gurgaon Railway Station", "railway": "station", "network": "Northern Railway" } },
+    { "type": "node", "id": 3030, "lat": 28.4710, "lon": 77.0710, "tags": { "name": "IFFCO Chowk Bus Junction (GMCBL)", "amenity": "bus_station" } },
+    { "type": "node", "id": 3031, "lat": 28.4480, "lon": 77.0400, "tags": { "name": "Rajiv Chowk Gurugram Bus Stand", "amenity": "bus_station" } }
+  ]
+}

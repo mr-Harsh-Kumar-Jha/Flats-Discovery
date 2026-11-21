@@ -1,0 +1,549 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8205,
+          19.1306
+        ]
+      },
+      "properties": {
+        "name": "Versova",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8315,
+          19.1255
+        ]
+      },
+      "properties": {
+        "name": "D.N. Nagar (Interchange Line 1/2A)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8465,
+          19.1205
+        ]
+      },
+      "properties": {
+        "name": "Andheri Metro (Interchange Railway)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.857,
+          19.1155
+        ]
+      },
+      "properties": {
+        "name": "Western Express Highway (WEH)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.868,
+          19.112
+        ]
+      },
+      "properties": {
+        "name": "Chakala (J.B. Nagar)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.875,
+          19.11
+        ]
+      },
+      "properties": {
+        "name": "Airport Road",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.885,
+          19.111
+        ]
+      },
+      "properties": {
+        "name": "Marol Naka (Interchange Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2007
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.898,
+          19.108
+        ]
+      },
+      "properties": {
+        "name": "Saki Naka",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2008
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.908,
+          19.086
+        ]
+      },
+      "properties": {
+        "name": "Ghatkopar (Interchange Central Railway)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 1",
+        "osm_id": 2009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8687,
+          19.0657
+        ]
+      },
+      "properties": {
+        "name": "BKC (Line 3 Aqua)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2010
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.852,
+          19.088
+        ]
+      },
+      "properties": {
+        "name": "Bandra Colony (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2011
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.856,
+          19.098
+        ]
+      },
+      "properties": {
+        "name": "Santacruz Metro (Line 3)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.865,
+          19.089
+        ]
+      },
+      "properties": {
+        "name": "CSMIA T1 Domestic Airport",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2013
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.874,
+          19.096
+        ]
+      },
+      "properties": {
+        "name": "CSMIA T2 International Airport",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2014
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.872,
+          19.128
+        ]
+      },
+      "properties": {
+        "name": "MIDC Andheri",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.882,
+          19.135
+        ]
+      },
+      "properties": {
+        "name": "SEEPZ",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.888,
+          19.143
+        ]
+      },
+      "properties": {
+        "name": "Aarey JVLR",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 3 Aqua",
+        "osm_id": 2017
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.86,
+          19.176
+        ]
+      },
+      "properties": {
+        "name": "Goregaon East (Line 7)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 7",
+        "osm_id": 2018
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.856,
+          19.117
+        ]
+      },
+      "properties": {
+        "name": "Gundavali (Line 7)",
+        "name_local": null,
+        "stop_type": "metro_station",
+        "route_info": "Line 7",
+        "osm_id": 2019
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.829,
+          18.9818
+        ]
+      },
+      "properties": {
+        "name": "Sant Gadge Maharaj Chowk (Jacob Circle Monorail)",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2020
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8335,
+          18.995
+        ]
+      },
+      "properties": {
+        "name": "Currey Road Monorail",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2021
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.848,
+          19.011
+        ]
+      },
+      "properties": {
+        "name": "Naigaon Monorail",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.861,
+          19.022
+        ]
+      },
+      "properties": {
+        "name": "Wadala Bridge Monorail Depot",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2023
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.867,
+          19.034
+        ]
+      },
+      "properties": {
+        "name": "GTB Nagar Monorail",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2024
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.885,
+          19.049
+        ]
+      },
+      "properties": {
+        "name": "Fertiliser Township Monorail",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2025
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.899,
+          19.062
+        ]
+      },
+      "properties": {
+        "name": "Chembur Monorail Interchange",
+        "name_local": null,
+        "stop_type": "monorail_station",
+        "route_info": "Mumbai Monorail",
+        "osm_id": 2026
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.835,
+          18.94
+        ]
+      },
+      "properties": {
+        "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Central Railway",
+        "osm_id": 2030
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.843,
+          19.018
+        ]
+      },
+      "properties": {
+        "name": "Dadar Junction (Western / Central)",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Western/Central",
+        "osm_id": 2031
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.84,
+          19.055
+        ]
+      },
+      "properties": {
+        "name": "Bandra Terminus",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Western Railway",
+        "osm_id": 2032
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.846,
+          19.119
+        ]
+      },
+      "properties": {
+        "name": "Andheri Railway Station",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Western Railway",
+        "osm_id": 2033
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.857,
+          19.229
+        ]
+      },
+      "properties": {
+        "name": "Borivali Railway Station",
+        "name_local": null,
+        "stop_type": "railway_station",
+        "route_info": "Western Railway",
+        "osm_id": 2034
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.868,
+          19.068
+        ]
+      },
+      "properties": {
+        "name": "BKC Bus Station (BEST)",
+        "name_local": null,
+        "stop_type": "bus_station",
+        "route_info": "City Bus Corridor",
+        "osm_id": 2040
+      }
+    }
+  ]
+}

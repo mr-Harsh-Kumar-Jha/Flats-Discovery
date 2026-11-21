@@ -1,0 +1,212 @@
+{
+  "elements": [
+    {
+      "type": "node",
+      "id": 4001,
+      "lat": 28.583,
+      "lon": 77.311,
+      "tags": {
+        "name": "Noida Sector 15",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4002,
+      "lat": 28.578,
+      "lon": 77.318,
+      "tags": {
+        "name": "Noida Sector 16",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4003,
+      "lat": 28.5708,
+      "lon": 77.3261,
+      "tags": {
+        "name": "Noida Sector 18 (Atta Market / Mall of India)",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4004,
+      "lat": 28.564,
+      "lon": 77.334,
+      "tags": {
+        "name": "Botanical Garden (Interchange Blue / Magenta)",
+        "station": "subway",
+        "line": "Interchange"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4005,
+      "lat": 28.568,
+      "lon": 77.346,
+      "tags": {
+        "name": "Golf Course",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4006,
+      "lat": 28.574,
+      "lon": 77.356,
+      "tags": {
+        "name": "Noida City Centre",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4007,
+      "lat": 28.591,
+      "lon": 77.368,
+      "tags": {
+        "name": "Noida Sector 52 (Interchange Aqua Line)",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4008,
+      "lat": 28.618,
+      "lon": 77.371,
+      "tags": {
+        "name": "Noida Sector 62",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4009,
+      "lat": 28.6271,
+      "lon": 77.3725,
+      "tags": {
+        "name": "Noida Electronic City",
+        "station": "subway",
+        "line": "Blue Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4010,
+      "lat": 28.59,
+      "lon": 77.372,
+      "tags": {
+        "name": "Noida Sector 51 (NMRC Aqua)",
+        "station": "subway",
+        "line": "Aqua Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4011,
+      "lat": 28.575,
+      "lon": 77.374,
+      "tags": {
+        "name": "Noida Sector 50 (NMRC)",
+        "station": "subway",
+        "line": "Aqua Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4012,
+      "lat": 28.565,
+      "lon": 77.382,
+      "tags": {
+        "name": "Noida Sector 76 (NMRC)",
+        "station": "subway",
+        "line": "Aqua Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4013,
+      "lat": 28.5135,
+      "lon": 77.3758,
+      "tags": {
+        "name": "Noida Sector 137 (NMRC Express Corridor)",
+        "station": "subway",
+        "line": "Aqua Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4014,
+      "lat": 28.4975,
+      "lon": 77.4172,
+      "tags": {
+        "name": "Noida Sector 142 (Advant Navis NMRC)",
+        "station": "subway",
+        "line": "Aqua Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4015,
+      "lat": 28.468,
+      "lon": 77.502,
+      "tags": {
+        "name": "Pari Chowk Greater Noida (NMRC)",
+        "station": "subway",
+        "line": "Aqua Line"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4020,
+      "lat": 28.647,
+      "lon": 77.315,
+      "tags": {
+        "name": "Anand Vihar RRTS (Namo Bharat Interchange)",
+        "highspeed": "yes",
+        "network": "Namo Bharat RRTS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4021,
+      "lat": 28.672,
+      "lon": 77.358,
+      "tags": {
+        "name": "Sahibabad RRTS Station",
+        "highspeed": "yes",
+        "network": "Namo Bharat RRTS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4022,
+      "lat": 28.669,
+      "lon": 77.432,
+      "tags": {
+        "name": "Ghaziabad RRTS Station",
+        "highspeed": "yes",
+        "network": "Namo Bharat RRTS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4030,
+      "lat": 28.567,
+      "lon": 77.336,
+      "tags": {
+        "name": "Sector 37 Inter-State Bus Stand",
+        "amenity": "bus_station"
+      }
+    }
+  ]
+}
